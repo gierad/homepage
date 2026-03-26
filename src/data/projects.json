@@ -1,0 +1,254 @@
+[
+  {
+    "title": "Foundation Models Framework",
+    "url": "https://developer.apple.com/documentation/foundationmodels",
+    "description": "In collaboration with SWE, Foundation Models framework allows developers to build on Apple Intelligence to bring users new experiences that are intelligent, available when they’re offline, and that protect their privacy, using AI inference that is free of cost. Includes Guided Generation, Tool calling, and more. iOS 26, watchOS 26, tvOS 26, macOS Tahoe.",
+    "img": "/projects/FoundationModelFrameworks/thumbnail01.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Xcode with ChatGPT",
+    "url": "https://www.apple.com/newsroom/2025/06/apple-supercharges-its-tools-and-technologies-for-developers/",
+    "description": "In collaboration with SWE, enable Xcode built-in support for ChatGPT, allowing developers to connect LLMs directly into their coding experience to write code, tests, and documentation, iterate on a design, fix errors, and more. Developers can also use API keys from other providers or run local models on Apple silicon, to use the best model that suits their needs. Xcode 26.",
+    "img": "/projects/XcodeChatGPTIntegration/thumbnail01.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Head Gestures for AirPods",
+    "url": "https://www.apple.com/newsroom/topics/airpods/",
+    "description": "In collaboration with CoreMotion, Siri, Intelligent System Experiences, and AirPods Firmware: machine learning models and algorithms for head gesture detection, enabling hands-free Siri Interactions on AirPods. AirPods 2nd gen+, iOS 18, watchOS 18, and macOS Sequioa.",
+    "img": "/projects/HeadGestures/thumbnail01.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Apple Intelligence: ChatGPT Integration",
+    "url": "https://www.apple.com/apple-intelligence/",
+    "description": "In collaboration with SWE, Siri, and OpenAI: part of a cross-functional team enabling system-wide integration and API support for Apple Intelligence and ChatGPT, including on-device and private cloud compute interfaces. iOS 18, iPadOS 18, and macOS Sequioa.",
+    "img": "/projects/AppleIntelligenceChatGPT/thumbnail01.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Apple Intelligence: Writing Tools and Personal Search",
+    "url": "https://www.apple.com/apple-intelligence/",
+    "description": "In collaboration with SWE Input Intelligance: part of a large cross-functional team working on Apple Intelligence for Writing Tools and Personal Context Search, specifically on model safety integration. iOS 18, iPadOS 18, and macOS Sequioa.",
+    "img": "/projects/AppleIntelligenceWritingToolsAndSearchContext/thumbnail01.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Apple Intelligence: Xcode Assist",
+    "url": "https://developer.apple.com/xcode/",
+    "description": "In collaboration with SWE Xcode Teams: part of a large cross-functional team working on Apple Intelligence for Xcode, specifically on model safety integration for predictive code completion and Swift Assist. macOS Sequioa.",
+    "img": "/projects/AppleIntelligenceXcode/thumbnail01.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Vision Pro",
+    "url": "https://www.apple.com/apple-vision-pro/",
+    "description": "In collaboration with Video Engineering: part of a large cross-functional team making contributions to research and development in hand input and interactions, including hand-object interactions, synthetic data, gesture customization, and ML model optimizations.",
+    "img": "/projects/VisionPro/thumbnail02.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "StandBy Mode",
+    "url": "https://www.apple.com/newsroom/2023/06/ios-17-makes-iphone-more-personal-and-intuitive/",
+    "description": "In collaboration with the Design Team: early-stage explorations on sensing, perception, and interaction techniques for StandBy mode in iOS.",
+    "img": "/projects/StandBy/thumbnail.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Time in Daylight",
+    "url": "https://www.apple.com/newsroom/2023/06/apple-provides-powerful-insights-into-new-areas-of-health/",
+    "description": "In collaboration with Health, Visual Experiences, and Core Motion: early explorations and algorithm support for time in daylight on the Watch for Vision Health. Recently announced at WWDC 2023.",
+    "img": "/projects/TimeInDaylight/thumbnail.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Temperature and Humidity Sensing",
+    "url": "https://www.apple.com/newsroom/2023/01/apple-introduces-the-new-homepod-with-breakthrough-sound-and-intelligence/",
+    "description": "In collaboration with Home Hardware, Home Software, Thermal Design, Hardware QA, Sensing Hardware: machine learning models and self-heating correction algorithms on the HomePod and HomePod Mini for temperature and humidity sensing.",
+    "img": "/projects/TemperatureAndHumidity/thumbnail01.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Crash Detection",
+    "url": "https://www.apple.com/newsroom/2022/09/apple-reveals-apple-watch-series-8-and-the-new-apple-watch-se/",
+    "description": "In collaboration with Core Motion: machine learning models and algorithms on the watch and phone for vehicular detection, serving as an early stage classifier for Crash Detection. Apple Watch Series 8+, Apple Watch Ultra, iPhone 14+.",
+    "img": "/projects/CrashDetection/thumbnail.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Always-On Display",
+    "url": "https://www.apple.com/iphone-14-pro/",
+    "description": "In collaboration with iPhone Hardware, Core OS, Core Motion, and Core Bluetooth: machine learning models and algorithms to support the Always-On Display, specifically power optimizations for suppression that levarage the watch-phone ecosystem. iPhone 14 Pro/Max.",
+    "img": "/projects/AlwaysOnDisplay/thumbnail.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Fitness: MultiSport",
+    "url": "https://www.apple.com/watchos/watchos-preview/",
+    "description": "In collaboration with Core Motion and Health Technologies: sensor fusion models for multimodal workout experiences. Automatic detection of indoor/outdoor swimming, cycling, and running in any sequence, including transitions. watchOS 9, Apple Watch Ultra action button integration.",
+    "img": "/projects/MultiSport/thumbnail.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Fitness: Cycling",
+    "url": "https://www.apple.com/watchos/watchos-preview/",
+    "description": "In collaboration with Core Motion and Health Technologies: shipped algorithms and models for cycling workout detection and auto- pause/resume, powering Fitness and Fall Detection features. Apple Watch Series 6+",
+    "img": "/projects/Cycling/thumbnail.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Hand Gestures for Assistive Touch",
+    "url": "https://www.apple.com/watchos/watchos-preview/",
+    "description": "In collaboration with Accessibility and Human Interface Design. Gesture interactions for Accessibility on the Watch. Assisted in feature productization. Apple Watch Series 6, SE.",
+    "img": "/projects/WatchAssistiveTouch/thumbnail.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Health: Handwashing",
+    "url": "https://www.apple.com/watchos/watchos-preview/",
+    "description": "In collaboration with watchOS Software and Health Technologies. Developed pre-COVID. Conceptualized, prototyped, built sensing + machine learning algorithms, and shipped the feature into production. Apple Watch Series 4+.",
+    "img": "/projects/Handwashing/thumbnail.jpg",
+    "type": "shipped"
+  },
+  {
+    "title": "Gesture Customization",
+    "url": "https://machinelearning.apple.com/research/enabling-hand-gesture",
+    "description": "Enabling Hand Gesture Customization on Wrist-Worn Devices. 2022.PaperProject",
+    "img": "/projects/GestureCustomization/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Listen Learner",
+    "url": "https://machinelearning.apple.com/research/automatic-class-discovery-one-shot-interactions-acoustic-activity",
+    "description": "Automatic Class Discovery and One-Class Interactions for Acoustic Activity Recognition. 2020.Paper Video Project",
+    "img": "/projects/ListenLearner/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Hand Activities",
+    "url": "https://www.gierad.com/projects/handactivities/",
+    "description": "Sensing Fine-Grained Hand Activity Sensing with Wearables. 2019.Paper Video Project",
+    "img": "/projects/HandActivities/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "ViBand",
+    "url": "https://www.gierad.com/projects/viband/",
+    "description": "High-Fidelity Bio-Acoustic Sensing Using Commodity Wearable Accelerometers. 2016.Paper Video Project",
+    "img": "/projects/ViBand/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "EM-Sense",
+    "url": "https://www.gierad.com/projects/emsense/",
+    "description": "Touch Recognition of Uninstrumented Electrical and Electromechanical Objects. 2015.Paper Video Project",
+    "img": "/projects/EMSense/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "SkinTrack",
+    "url": "https://www.gierad.com/projects/skintrack/",
+    "description": "Using the Body as an Electrical Waveguide for Finger Tracking on the Skin. 2016.Paper Video Project",
+    "img": "/projects/SkinTrack/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "AuraSense",
+    "url": "https://gierad.com/assets/aurasense/aurasense.pdf",
+    "description": "Enabling Around-Watch Interactions with Electric Field Sensing. 2016.Paper Video",
+    "img": "/projects/AuraSense/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Skin Buttons",
+    "url": "https://www.gierad.com/projects/skinbuttons/",
+    "description": "Cheap, Small, Low-Power and Clickable Fixed-Icon Laser Projections. 2014.Paper Video Project",
+    "img": "/projects/SkinButtons/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Watch 5DOF",
+    "url": "https://www.gierad.com/projects/smartwatch5dof/",
+    "description": "Expanding the Input Expressivity of Smartwatches Using Mechanical Pan, Twist, Tilt, and Click. CHI 2014.Paper Video Project",
+    "img": "/projects/Smartwatch5DOF/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Ubicoustics",
+    "url": "https://www.gierad.com/projects/ubicoustics/",
+    "description": "Plug-and-Play Acoustic Activity Recognition. 2018.Paper Video Project",
+    "img": "/projects/Ubicoustics/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Synthetic Sensors",
+    "url": "https://www.gierad.com/projects/supersensor/",
+    "description": "Towards General-Purpose Sensing. 2017.Paper Video Project",
+    "img": "/projects/SuperSensor/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "SurfaceSight",
+    "url": "https://www.gierad.com/projects/surfacesight/",
+    "description": "LiDAR-Enabled Touch, User, and Object Sensing for IoT Experiences. 2019.Paper Video Project",
+    "img": "/projects/SurfaceSight/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Zensors",
+    "url": "https://www.gierad.com/projects/zensors/",
+    "description": "Adaptive, Rapidly Deployable, Human-Intelligent Sensor Feeds. 2015.Paper Video Project",
+    "img": "/projects/Zensors/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Vibrosight",
+    "url": "https://yang-zhang.me/research/Vibrosight/Vibrosight.html",
+    "description": "Long-Range Vibrometry for Smart Environment Sensing. 2018.Paper Video",
+    "img": "/projects/VibroSight/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Deus EM Machina",
+    "url": "https://www.gierad.com/assets/emphone/emphone.pdf",
+    "description": "On-Touch Contextual Functionality for Smart IoT Appliances. 2017.Paper Video",
+    "img": "/projects/EMPhone/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Electrick",
+    "url": "https://www.gierad.com/assets/electrick/electrick.pdf",
+    "description": "Low-Cost Touch Sensing Using Electric Field Tomography. 2017.Paper Video",
+    "img": "/projects/Electrick/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "ElectroDermis",
+    "url": "",
+    "description": "Fully Untethered, Stretchable, and Highly-Customizable Electronic Bandages. CHI 2019.",
+    "img": "/projects/ElectroDermis/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "PixelTone",
+    "url": "https://www.gierad.com/projects/pixeltone/",
+    "description": "A Multimodal Interface for Image Editing. 2013.Paper Video Project",
+    "img": "/projects/PixelTone/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Wheelchair Sensing",
+    "url": "https://www.gierad.com/assets/spokesense/understanding_spokesense.pdf",
+    "description": "Exploring Data Tracking and Sharing Preferences of Wheelchair Athletes. 2018.Paper",
+    "img": "/projects/SpokeSense/thumbnail.jpg",
+    "type": "publication"
+  },
+  {
+    "title": "Surface Duo",
+    "url": "",
+    "description": "Early Concept, Interaction Framework, and Sensing Techniques for Microsoft Surface Duo.Work Done at Microsoft in 2017.",
+    "img": "/projects/SurfaceDuo/thumbnail.jpg",
+    "type": "publication"
+  }
+]
