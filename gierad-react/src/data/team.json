@@ -1,0 +1,233 @@
+[
+  {
+    "name": "Dr. Gierad Laput",
+    "url": "https://www.gierad.com",
+    "role": "Senior Engineering Manager",
+    "img": "/images/team/gierad_portrait.jpg"
+  },
+  {
+    "name": "Dr. James Kennedy",
+    "role": "Senior Research Scientist",
+    "img": "/images/team/bw/james.jpg"
+  },
+  {
+    "name": "Richard Kang",
+    "url": "http://runchangkang.com",
+    "role": "ML Engineering Manager",
+    "img": "/images/team/bw/richard.jpg"
+  },
+  {
+    "name": "Dr. Kareem Bedri",
+    "url": "https://sites.google.com/view/abdelkareembedri",
+    "role": "Research and Engineering Manager",
+    "img": "/images/team/bw/kareem3.jpg"
+  },
+  {
+    "name": "Erik Hornberger",
+    "role": "Senior Software Engineer",
+    "img": "/images/team/bw/erik.jpg"
+  },
+  {
+    "name": "George Haddad",
+    "role": "Software Engineering Manager",
+    "img": "/images/team/bw/george.jpg"
+  },
+  {
+    "name": "Dr. Asaf Liberman",
+    "role": "Senior Research Scientist",
+    "img": "/images/team/bw/asaf.jpg"
+  },
+  {
+    "name": "Baruch Zilber",
+    "role": "Senior Software Engineer",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Saar Tal Mirkin",
+    "role": "Senior ML Engineer",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Mike Ralph",
+    "role": "Software Engineer",
+    "img": "/images/team/bw/mike2.jpg"
+  },
+  {
+    "name": "Shira Kadosh",
+    "role": "ML Engineer",
+    "img": "/images/team/bw/shira.jpg"
+  },
+  {
+    "name": "Oron Levy",
+    "role": "Senior Research Scientist",
+    "img": "/images/team/bw/oron.jpg"
+  },
+  {
+    "name": "Dr. Daniel Rotman",
+    "role": "Senior Research Scientist",
+    "img": "/images/team/bw/daniel.jpg"
+  },
+  {
+    "name": "Eyal Finkelshtein",
+    "role": "ML Engineer",
+    "img": "/images/team/bw/eyal.jpg"
+  },
+  {
+    "name": "Moran Yanuka",
+    "role": "Research Associate",
+    "img": "/images/team/bw/moran.jpg"
+  },
+  {
+    "name": "Dr. Rebecca Adaimi",
+    "url": "https://www.rebeccaadaimi.com",
+    "role": "Research Scientist",
+    "img": "/images/team/bw/rebecca2.jpg"
+  },
+  {
+    "name": "Junyoung Park",
+    "url": "https://junyong.xyz",
+    "role": "Research Associate",
+    "img": "/images/team/bw/junyong.jpg"
+  },
+  {
+    "name": "Mary Vo",
+    "role": "Data and Test Engineer",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Cathy Fang",
+    "url": "https://cathy-fang.com/about.html",
+    "role": "Research Associate (Currently Ph.D. at MIT)",
+    "img": "/images/team/bw/cathy2.jpg"
+  },
+  {
+    "name": "Arkady GodlinSenior ML Engineer",
+    "url": "",
+    "role": "Senior ML Engineer",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Richie MuffoletoSenior ML SWE",
+    "url": "",
+    "role": "Senior ML SWE",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Steve BerardiSenior ML SWE",
+    "url": "",
+    "role": "Senior ML SWE",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Joachim StahlSenior ML SWE",
+    "url": "",
+    "role": "Senior ML SWE",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Mohamed HussainML Research Engineer",
+    "url": "",
+    "role": "ML Research Engineer",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Anurag BansalSenior ML Engineer",
+    "url": "",
+    "role": "Senior ML Engineer",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Yanzi JinSenior ML Researcher",
+    "url": "",
+    "role": "Senior ML Researcher",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Jackson CannonML Engineer",
+    "url": "",
+    "role": "ML Engineer",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Todd FerkingstadData Ops Manager",
+    "url": "",
+    "role": "Data Ops Manager",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Brian KinneeData Ops",
+    "url": "",
+    "role": "Data Ops",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Michelle NugyenData Ops",
+    "url": "",
+    "role": "Data Ops",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Han Zhang",
+    "role": "Research Associate (now Ph.D. at UW)",
+    "img": "/images/team/bw/han.jpg"
+  },
+  {
+    "name": "Vimal Mollyn",
+    "role": "Research Associate (now Ph.D. at CMU)",
+    "img": "/images/team/bw/vimal.jpg"
+  },
+  {
+    "name": "Dr. Jun Gong",
+    "url": "https://www.jungong.me",
+    "role": "Senior Research Scientist",
+    "img": "/images/team/bw/jun.jpg"
+  },
+  {
+    "name": "Soroush Shahi",
+    "url": "https://soroush-shahi.com",
+    "role": "Research Associate (now Ph.D. at Northwestern)",
+    "img": "/images/team/bw/soroush.jpg"
+  },
+  {
+    "name": "Lisa Elkin",
+    "url": "https://lelkin90.wixsite.com/lisaelkin",
+    "role": "Research Associate (now Ph.D. at UW)",
+    "img": "/images/team/bw/lisa.jpg"
+  },
+  {
+    "name": "Orson Xu",
+    "url": "https://orsonxu.com",
+    "role": "Research Associate (now Professor at Columbia)",
+    "img": "/images/team/bw/orson.jpg"
+  },
+  {
+    "name": "Dr. Carolina Brum",
+    "url": "https://www.carolinabrum.com",
+    "role": "Senior Research Scientist",
+    "img": "/images/team/bw/carolina.jpg"
+  },
+  {
+    "name": "Dr. Ke-Yu Chen",
+    "url": "https://www.keyuc.com",
+    "role": "Senior Research Scientist",
+    "img": "/images/team/bw/keyu.jpg"
+  },
+  {
+    "name": "Fereshteh Shahmiri",
+    "url": "https://www.fereshtehshahmiri.com",
+    "role": "Research Associate (now at Apple)",
+    "img": "/images/team/bw/fereshteh.jpg"
+  },
+  {
+    "name": "Gabrielle CohnML Engineer(now at Apple)",
+    "url": "",
+    "role": "ML Engineer (now at Apple)",
+    "img": "/images/team/bw/placeholder.png"
+  },
+  {
+    "name": "Dr. Scott Hudson",
+    "url": "https://www.cs.cmu.edu/~hudson/",
+    "role": "Senior Visiting Professor, CMU",
+    "img": "/images/team/bw/scott.jpg"
+  }
+]

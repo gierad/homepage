@@ -1,0 +1,9 @@
+export { default as Navbar } from './Navbar';
+export { default as Hero } from './Hero';
+export { default as Experience } from './Experience';
+export { default as Publications } from './Publications';
+export { default as Features } from './Features';
+export { default as Team } from './Team';
+export { default as Misc } from './Misc';
+export { default as Gallery } from './Gallery';
+export { default as Footer } from './Footer';

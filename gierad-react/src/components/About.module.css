@@ -1,0 +1,64 @@
+.section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.textBlock {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--spacing-sm);
+}
+
+.paragraph {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+
+.imageBlock {
+    width: 100%;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background-color: #e5e5e5;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/5c1a74d2a9e0287ce98dc4be/1545667352355-081O895YV1J4XJ1VXKXX/Stocksy_txp2beff8d9hR9100_Medium_1212879.jpg?format=1000w');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter var(--transition-slow);
+}
+
+.imagePlaceholder:hover {
+    filter: grayscale(0) contrast(1.05);
+}
+
+@media (min-width: 1024px) {
+    .section {
+        padding: var(--spacing-2xl) var(--spacing-xl);
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .textBlock {
+        padding-right: var(--spacing-xl);
+    }
+}

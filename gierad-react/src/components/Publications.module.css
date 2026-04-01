@@ -1,0 +1,114 @@
+.section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl);
+}
+
+.sectionTitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 600;
+    border-left: 3px solid var(--text-secondary);
+    padding-left: var(--spacing-sm);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    margin: 0 calc(var(--spacing-md) * -1);
+    border-radius: 8px;
+    border-bottom: none;
+    align-items: flex-start;
+    transition: all var(--transition-normal);
+}
+
+.item:hover,
+.item.active {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+}
+
+.imageContainer {
+    flex-shrink: 0;
+    width: 100px;
+    height: 70px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--border-color);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.item:hover .image,
+.item.active .image {
+    transform: scale(1.05);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon {
+    color: var(--text-tertiary);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all var(--transition-normal);
+}
+
+.item:hover .icon,
+.item.active .icon {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--text-primary);
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+
+@media (max-width: 640px) {
+    .item {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        gap: var(--spacing-sm);
+    }
+    
+    .content {
+        padding: 0 var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .imageContainer {
+        width: 100%;
+        height: 180px;
+    }
+}

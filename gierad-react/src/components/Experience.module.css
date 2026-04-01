@@ -1,0 +1,176 @@
+.section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl);
+}
+
+.sectionTitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 600;
+    border-left: 3px solid var(--text-secondary);
+    padding-left: var(--spacing-sm);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm) var(--spacing-xs);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+
+.meta {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.logoContainer {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 64px;
+    object-fit: contain;
+    border-radius: 4px;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: all var(--transition-normal);
+    transform: scale(var(--logo-scale, 1));
+}
+
+.item:hover .logo,
+.item.active .logo {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(calc(var(--logo-scale, 1) * 1.05));
+}
+
+/* Shift the HBS logos up slightly so the text aligns with the role title */
+img[alt="Harvard Business School"],
+img[alt="Harvard Business School Dark Mode"] {
+    transform: translateY(-15px) scale(var(--logo-scale, 1));
+}
+
+.item:hover img[alt="Harvard Business School"],
+.item.active img[alt="Harvard Business School"],
+.item:hover img[alt="Harvard Business School Dark Mode"],
+.item.active img[alt="Harvard Business School Dark Mode"] {
+    transform: translateY(-15px) scale(calc(var(--logo-scale, 1) * 1.05));
+}
+
+/* Explicitly scale up the Apple light mode PNG to compensate for its transparent padding */
+img[alt="Apple"] {
+    /* Use the variable to respect hover state, but base it on 1.33 */
+    --logo-scale: 1.33;
+}
+
+/* Explicitly scale down the Apple dark mode SVG to balance with landscape wordmarks */
+img[alt="Apple Dark Mode"] {
+    max-height: 38px;
+}
+
+/* Scale down the University of Michigan Block M to match other logo sizes, and shift up */
+img[alt="University of Michigan"],
+img[alt="University of Michigan Dark Mode"] {
+    max-height: 30px;
+    transform: translateY(-10px) scale(var(--logo-scale, 1));
+}
+
+.item:hover img[alt="University of Michigan"],
+.item.active img[alt="University of Michigan"],
+.item:hover img[alt="University of Michigan Dark Mode"],
+.item.active img[alt="University of Michigan Dark Mode"] {
+    transform: translateY(-10px) scale(calc(var(--logo-scale, 1) * 1.05));
+}
+
+.logoLight {
+    display: block;
+}
+
+.logoDark {
+    display: none;
+}
+
+:global(.dark-mode) .logoLight.hasDarkAlt {
+    display: none;
+}
+
+:global(.dark-mode) .logoDark {
+    display: block;
+    filter: grayscale(100%);
+}
+
+:global(.dark-mode) .item:hover .logoDark,
+:global(.dark-mode) .item.active .logoDark {
+    filter: grayscale(0%);
+}
+
+:global(.dark-mode) .invertInDark {
+    /* Only invert explicitly marked logos (e.g. black text logos like Apple/CMU) */
+    filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.2) grayscale(100%);
+}
+
+/* Ensure inverted logos also drop the grayscale constraint when activated */
+:global(.dark-mode) .item:hover .invertInDark,
+:global(.dark-mode) .item.active .invertInDark {
+    filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.2) grayscale(0%);
+}
+
+.years {
+    font-variant-numeric: tabular-nums;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.company {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.role {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.details {
+    font-size: 0.95rem;
+    color: var(--text-tertiary);
+    margin-top: 0.25rem;
+    max-width: 500px;
+}
+
+@media (min-width: 640px) {
+    .item {
+        /* [Logo/Years] - [Title/Details] layout */
+        grid-template-columns: 160px 1fr;
+        gap: var(--spacing-lg);
+    }
+}

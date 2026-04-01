@@ -1,0 +1,310 @@
+.section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.sectionTitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+    border-left: 3px solid var(--text-secondary);
+    padding-left: var(--spacing-sm);
+}
+
+.group {
+    width: 100%;
+}
+
+.year {
+    font-variant-numeric: tabular-nums;
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+    min-width: 45px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* Press List Styles */
+.pressList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pressItem {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    line-height: 1.5;
+    /* Resting state for scrollspy effect */
+    opacity: 0.4;
+    transform: translateX(-4px);
+    transition: all var(--transition-normal);
+}
+
+.pressItem:hover,
+.pressItem.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.publication {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pressTitle {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pressTitle:hover {
+    text-decoration: underline;
+    border-bottom: none;
+}
+
+/* Dynamic Magnetic Timeline Styles */
+.dynamicTimelineContainer {
+    position: relative;
+    margin-left: 0.25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.dynamicTimelineSvg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.dynamicTimelineContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.timelineItem {
+    display: flex;
+    gap: 1.5rem;
+    padding-left: 1.75rem; /* space for the SVG string */
+    align-items: flex-start;
+    opacity: 0.7;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: default;
+}
+
+.timelineYear, .timelineText {
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.timelineYear {
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    flex-shrink: 0;
+    width: 2.25rem;
+    padding-top: 2px;
+}
+
+.timelineText {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Optional hover state to signify interaction */
+.timelineItem {
+    transition: opacity 0.3s ease;
+}
+
+.timelineItem:hover {
+    opacity: 1;
+}
+
+.timelineItem:hover .timelineYear {
+    color: var(--text-secondary); /* slight bump in brightness */
+}
+
+/* Decrease opacity of non-hovered items if we want a focal effect, or just let them fade */
+.dynamicTimelineContent:hover .timelineItem:not(:hover) {
+    opacity: 0.4;
+}
+
+/* Legacy Simple List (Keep for now if referenced elsewhere) */
+.simpleList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.simpleItem {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    line-height: 1.5;
+    opacity: 0.4;
+    transform: translateX(-4px);
+    transition: all var(--transition-normal);
+}
+
+.simpleItem:hover,
+.simpleItem.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.text {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+/* Two Column Layout for Teaching & Reviewing */
+.twoColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.plainList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-left: 0;
+}
+
+.plainItem {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Teaching Cards */
+.teachingCards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.teachingCard {
+    background-color: var(--surface-secondary, rgba(0,0,0,0.02));
+    border: 1px solid var(--border-color, rgba(0,0,0,0.1));
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md, 8px);
+    transition: all var(--transition-normal);
+}
+
+.teachingCard:hover,
+.teachingCard.active {
+    transform: translateY(-2px);
+    border-color: var(--text-tertiary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.teachingHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Better alignment */
+    gap: 0.5rem;
+}
+
+.teachingCourse {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.teachingYearBadge {
+    background-color: var(--surface-hover, rgba(0,0,0,0.05));
+    border: 1px solid var(--border-color, rgba(0,0,0,0.1));
+    color: var(--text-secondary);
+    padding: 0.15rem 0.35rem; /* Smaller, tighter padding */
+    border-radius: 4px;
+    font-size: 0.65rem; /* Smaller font */
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.teachingSchool {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* Reviewing Pills */
+.pillContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.reviewPill {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--surface-secondary, rgba(0,0,0,0.02));
+    border: 1px solid var(--border-color, rgba(0,0,0,0.1));
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+    transition: all var(--transition-normal);
+}
+
+.reviewPill:hover,
+.reviewPill.active {
+    border-color: var(--text-secondary);
+    background-color: var(--surface-hover, rgba(0,0,0,0.05));
+    transform: translateY(-1px);
+}
+
+.reviewVenue {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.reviewYears {
+    color: var(--text-tertiary);
+    margin-left: 0.4rem;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 640px) {
+
+    .pressItem,
+    .simpleItem {
+        flex-wrap: nowrap;
+        gap: 0.25rem 0.5rem;
+    }
+
+    .publication {
+        margin-right: -0.25rem;
+        /* tight spacing with quotes */
+    }
+
+    .twoColumn {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+}

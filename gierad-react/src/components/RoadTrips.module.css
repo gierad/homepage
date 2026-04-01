@@ -1,0 +1,287 @@
+.section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl);
+}
+
+.sectionTitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 600;
+    border-left: 3px solid var(--text-secondary);
+    padding-left: var(--spacing-sm);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    width: 100%;
+}
+
+.item {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    /* Resting state for scrollspy trailing effect */
+    opacity: 0.4;
+    transition: all var(--transition-normal);
+}
+
+.item:hover,
+.item.active {
+    opacity: 1;
+}
+
+.thumbnailContainer {
+    width: 250px;
+    height: 140px;
+    /* Force an explicit height for Leaflet */
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    background-color: var(--bg-secondary);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.thumbnailMap {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Disable interactions on the row thumbnail map so the row click registers */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Grayscale only the map tiles, leaving the route line full color */
+.thumbnailMap :global(.leaflet-tile-pane) {
+    filter: grayscale(100%);
+    transition: filter var(--transition-slow), opacity var(--transition-slow);
+}
+
+.item:hover .thumbnailMap :global(.leaflet-tile-pane),
+.item.active .thumbnailMap :global(.leaflet-tile-pane) {
+    filter: grayscale(0%);
+}
+
+.textDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.tripTitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.tripMiles {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--text-accent, #666);
+    margin-bottom: 0.25rem;
+}
+
+.stops {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35rem;
+}
+
+.stop {
+    white-space: nowrap;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+.lightboxContent {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.expandedMap {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    max-width: 1000px;
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    animation: zoomIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.lightboxMap {
+    width: 100% !important;
+    height: 60vh !important;
+    z-index: 1;
+}
+
+/* Hide the default directions panel from leaflet-routing-machine */
+:global(.leaflet-routing-container) {
+    display: none !important;
+}
+
+.mapDetails {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.mapDetails h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.routeDetails {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.closeBtn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10000;
+    opacity: 0.6;
+    transition: opacity var(--transition-normal);
+}
+
+.closeBtn:hover {
+    opacity: 1;
+}
+
+.navBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10000;
+    opacity: 0.7;
+    transition: all var(--transition-normal);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBtn:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.prevBtn {
+    left: var(--spacing-xl);
+}
+
+.nextBtn {
+    right: var(--spacing-xl);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    .thumbnailContainer {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 16/9;
+    }
+
+    .textDetails {
+        padding: 0 var(--spacing-sm) var(--spacing-md);
+    }
+
+    .navBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .prevBtn {
+        left: var(--spacing-sm);
+    }
+
+    .nextBtn {
+        right: var(--spacing-sm);
+    }
+}
