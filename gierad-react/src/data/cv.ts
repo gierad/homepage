@@ -4,8 +4,8 @@ export const aboutData = {
   company: "Apple",
   location: "Pittsburgh, PA",
   bio: [
-    "I'm a Computer Scientist and a Senior Engineering Manager at Apple. I lead an engineering organization under Machine Intelligence Neural Design (MIND) at SWE AIML. We innovate and build differentiating experiences through research and development in multimodal machine learning with vision, audio, motion, and other sensors. We also work on ML innovations that bridge that gap between SWE and Foundation Models. Applications of our work include ambient intelligence, wearables, and AI-driven interactive experiences.",
-    "I am currently attending Harvard Business School as part of their executive education program, joining the Harvard Alumni community in 2026.",
+    "I'm a Computer Scientist and a Senior Manager of AI and Machine Learning at Apple. I lead an engineering organization under Machine Intelligence Neural Design (MIND) at SWE AIML. My team specializes in on-device AI, where we innovate in multimodal machine learning with vision, audio, motion, and other sensors. We also work on ML innovations that bridge that gap between SWE and Foundation Models. Applications of our work include ambient intelligence, wearables, and AI-driven interactive experiences.",
+    "I recently became alumni of Harvard Business School (2026), as part of their executive education program.",
     "Prior to Apple, I completed my Ph.D. at Carnegie Mellon University's School of Computer Science, where I was a founding member of the Future Interfaces Group. Prior to Apple, I was a Google Ph.D. Fellow, a recipient of the Fast Company Innovation by Design Award, a Disney Imagineer, and a recipient of ten Best Paper Awards and Nominations at premier venues in human-computer interaction. I'm also an Affiliate Professor at Carnegie Mellon University's School of Computer Science and Human-Computer Interaction Institute."
   ],
   links: {
@@ -18,9 +18,9 @@ export const aboutData = {
 export const experienceData = [
   {
     company: "Apple",
-    role: "Senior Engineering Manager",
+    role: "Senior Engineering Manager of AI and Machine Learning",
     years: "2018 - Present",
-    details: "Perception and Interaction Engineering under Machine Intelligence Neural Design (MIND) at SWE AIML.",
+    details: "Machine Intelligence Neural Design (MIND) at SWE AIML.",
     imgSrc: "/images/logos/apple.png",
     darkImgSrc: "/images/logos/apple_dark.svg",
     invertInDark: false
@@ -66,7 +66,7 @@ export const experienceData = [
 export const educationData = [
   {
     school: "Harvard Business School",
-    degree: "Exec MBA, Alumni",
+    degree: "Exec MBA (equivalent), Alumni",
     imgSrc: "/images/logos/harvard.png",
     darkImgSrc: "/images/logos/hbs_dark_transparent.png",
     invertInDark: false
