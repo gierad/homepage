@@ -18,7 +18,7 @@ export const aboutData = {
 export const experienceData = [
   {
     company: "Apple",
-    role: "Senior Engineering Manager of AI and Machine Learning",
+    role: "Senior Manager of AI and Machine Learning",
     years: "2018 - Present",
     details: "Machine Intelligence Neural Design (MIND) at SWE AIML.",
     imgSrc: "/images/logos/apple.png",
