@@ -4,8 +4,8 @@ export const aboutData = {
   company: "Apple",
   location: "Pittsburgh, PA",
   bio: [
-    "I'm a Computer Scientist and a Senior Manager of AI and Machine Learning at Apple. I lead an engineering organization under Machine Intelligence Neural Design (MIND) at SWE AIML. My team specializes in on-device AI, where we innovate in multimodal machine learning with vision, audio, motion, and other sensors. We also work on ML innovations that bridge that gap between SWE and Foundation Models. Applications of our work include ambient intelligence, wearables, and AI-driven interactive experiences.",
-    "I recently became alumni of Harvard Business School (2026), as part of their executive education program.",
+    "I'm a Computer Scientist and a Senior Manager of AI and Machine Learning at Apple. I lead an engineering organization under Machine Intelligence Neural Design (MIND) at SWE AIML. My team specializes in on-device AI, where we innovate in multimodal machine learning with vision, audio, motion, and other sensors. We also work on ML innovations that bridge that gap between SWE and Foundation Models. We've made contributions to several products and features across the Apple ecosystem. <a href=\"#features\"><strong>See Select Features Shipped ↓</strong></a>",
+    "<i>I recently completed the executive education program at Harvard Business School (2026).</i>",
     "Prior to Apple, I completed my Ph.D. at Carnegie Mellon University's School of Computer Science, where I was a founding member of the Future Interfaces Group. Prior to Apple, I was a Google Ph.D. Fellow, a recipient of the Fast Company Innovation by Design Award, a Disney Imagineer, and a recipient of ten Best Paper Awards and Nominations at premier venues in human-computer interaction. I'm also an Affiliate Professor at Carnegie Mellon University's School of Computer Science and Human-Computer Interaction Institute."
   ],
   links: {
@@ -18,7 +18,7 @@ export const aboutData = {
 export const experienceData = [
   {
     company: "Apple",
-    role: "Senior Manager of AI and Machine Learning",
+    role: "Senior Engineering Manager",
     years: "2018 - Present",
     details: "Machine Intelligence Neural Design (MIND) at SWE AIML.",
     imgSrc: "/images/logos/apple.png",
@@ -1453,12 +1453,6 @@ export const pressData = [
     "publication": "NBC News",
     "title": "Disney\n\t\t\t\t\t\t\t\t\tSmartwatch Knows What You’re Touching and Tells You What to Do Next",
     "link": "http://www.nbcnews.com/tech/innovation/disney-smartwatch-knows-what-youre-touching-tells-you-what-do-n461741"
-  },
-  {
-    "year": "2015",
-    "publication": "CBS",
-    "title": "",
-    "link": ""
   },
   {
     "year": "2015",

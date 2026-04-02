@@ -15,7 +15,7 @@ export default function Hero() {
 
             <div className={styles.bio}>
                 {aboutData.bio.map((paragraph, idx) => (
-                    <p key={idx} className={styles.paragraph}>{paragraph}</p>
+                    <p key={idx} className={styles.paragraph} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
                 ))}
             </div>
 
