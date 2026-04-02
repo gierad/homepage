@@ -11,6 +11,7 @@ export default function Features() {
     return (
         <section id="features" className={styles.section}>
             <h2 className={styles.sectionTitle}>Selected Features Shipped</h2>
+            <p className="section-subtitle">We collaborate daily with multiple product teams across Apple. Here are select features and products that we've made significant contributions to and continue to maintain:</p>
             <div className={styles.list} ref={listRef}>
                 {featuresData.map((feature, idx) => (
                     <a key={idx} href={feature.link} target="_blank" rel="noopener noreferrer" className={styles.item}>
