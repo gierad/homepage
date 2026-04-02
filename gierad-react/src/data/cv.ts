@@ -4,12 +4,12 @@ export const aboutData = {
   company: "Apple",
   location: "Pittsburgh, PA",
   bio: [
-    "I'm a Computer Scientist and a Senior Manager of AI and Machine Learning at Apple. I lead an engineering organization under Machine Intelligence Neural Design (MIND) at SWE AIML. My team specializes in on-device AI, where we innovate in multimodal machine learning with vision, audio, motion, and other sensors. We also work on ML innovations that bridge that gap between SWE and Foundation Models. We've made contributions to several products and features across the Apple ecosystem. <a href=\"#features\"><strong>See Select Features Shipped ↓</strong></a>",
-    "<i>I recently became alumni of Harvard Business School (2026), as part of their executive education program.</i>",
+    "I'm a Computer Scientist and a Senior Manager of AI and Machine Learning at Apple. I lead an engineering organization under Machine Intelligence Neural Design (MIND) at SWE AIML. My team specializes in on-device AI, where we innovate in multimodal machine learning with vision, audio, motion, and other sensors. We also work on ML innovations bridging the gap between SWE and Foundation Models. We own and have made contributions to several products and features across the Apple ecosystem. <a href=\"#features\"><strong>See Select Features Shipped ↓</strong></a>",
+    "<i>Update:<br/> I recently became an alumnus of Harvard Business School (2026) through their Executive Education program. It was a lot of work, but I am done!</i>",
     "Prior to Apple, I completed my Ph.D. at Carnegie Mellon University's School of Computer Science, where I was a founding member of the Future Interfaces Group. Prior to Apple, I was a Google Ph.D. Fellow, a recipient of the Fast Company Innovation by Design Award, a Disney Imagineer, and a recipient of ten Best Paper Awards and Nominations at premier venues in human-computer interaction. I'm also an Affiliate Professor at Carnegie Mellon University's School of Computer Science and Human-Computer Interaction Institute."
   ],
   links: {
-    email: "mailto:hello@gierad.com", // Keeping a generic email for the template
+    email: "mailto:my-first-name@apple.com", // Keeping a generic email for the template
     instagram: "https://instagram.com/gierad",
     scholar: "https://scholar.google.com/citations?user=4yPToP0AAAAJ&hl=en"
   }
@@ -66,20 +66,21 @@ export const experienceData = [
 export const educationData = [
   {
     school: "Harvard Business School",
-    degree: "Exec MBA (equivalent), Alumni",
+    degree: "Exec MBA (Exec Ed), Alumni • 2026",
     imgSrc: "/images/logos/harvard.png",
     darkImgSrc: "/images/logos/hbs_dark_transparent.png",
-    invertInDark: false
+    invertInDark: false,
+    offsetY: -15
   },
   {
     school: "Carnegie Mellon University",
-    degree: "Ph.D. Computer Science, M.S. Computer Science",
+    degree: "Ph.D. Computer Science, M.S. Computer Science • 2019",
     imgSrc: "/images/logos/cmu.png",
     invertInDark: false
   },
   {
     school: "University of Michigan",
-    degree: "B.S. Electrical Engineering",
+    degree: "B.S. Electrical Engineering, MSI • 2013",
     imgSrc: "/images/logos/michigan.png",
     invertInDark: false
   }

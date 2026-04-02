@@ -18,12 +18,20 @@ export default function Education() {
                                         src={edu.imgSrc}
                                         alt={edu.school}
                                         className={`${styles.logo} ${(edu as any).darkImgSrc ? styles.logoLight + ' ' + styles.hasDarkAlt : ''} ${edu.invertInDark ? 'invertInDark' : ''}`}
+                                        style={{
+                                            ...(edu as any).scale ? { '--logo-scale': (edu as any).scale } as React.CSSProperties : {},
+                                            ...(edu as any).offsetY ? { transform: `translateY(${(edu as any).offsetY}px)` } : {}
+                                        }}
                                     />
                                     {(edu as any).darkImgSrc && (
                                         <img
                                             src={(edu as any).darkImgSrc}
                                             alt={edu.school + ' Dark Mode'}
                                             className={`${styles.logo} ${styles.logoDark}`}
+                                            style={{
+                                                ...(edu as any).scale ? { '--logo-scale': (edu as any).scale } as React.CSSProperties : {},
+                                                ...(edu as any).offsetY ? { transform: `translateY(${(edu as any).offsetY}px)` } : {}
+                                            }}
                                         />
                                     )}
                                 </div>
