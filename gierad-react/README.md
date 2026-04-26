@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# Gierad's Personal Portfolio (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for my personal portfolio, built with React, TypeScript, and Vite. The design language is strictly minimalist, favoring monochrome aesthetics, sharp typography, and carefully curated photography.
 
-Currently, two official plugins are available:
+## Project Architecture & Data Management
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application is heavily data-driven, storing content in static TypeScript/JSON files rather than relying on an external CMS. This ensures blazing fast load times and version-controlled content history.
 
-## React Compiler
+- `src/data/cv.ts`: Master configuration for biography, experience, education, and publication data.
+- `src/data/roadTrips.ts` & `scripts/roadTrips.js`: The central arrays defining all road trip stops (latitude/longitude), distances, and metadata.
+- `src/data/gallery.json`: The manifest for the "Passengers" photography collection.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Key Features & Custom Implementations
 
-## Expanding the ESLint configuration
+### 1. "Already Immortal" Photography Collection
+The photography section serves as a meditation on the fleeting nature of human time versus geological time, deeply influenced by the U.S. National Parks. 
+- **Typography:** Features a highly stylized, italicized excerpt from John Muir's journals (Yosemite, 1875) rendered in `Playfair Display`.
+- **Masonry Grid:** A strict, static black-and-white grid without zoom hover effects to emulate a physical fine-art gallery wall. Key images (like the volcano eruption) are algorithmically anchored to the end of the collection for narrative pacing.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. Road Trips & Headless Map Generation
+The "Road Trips" section documents 30+ journeys (including recent additions like Mallorca and Menorca).
+- **Route Fetching (`fetchRoutes.js`):** A custom Node script that queries the public OSRM (Open Source Routing Machine) API to calculate the exact turn-by-turn driving polylines between all stops. This data is cached in `cachedRoutes.json`.
+- **Thumbnail Capture (`captureThumbnails.js`):** We use a Puppeteer headless browser to silently spin up the app (`?snapshot=ID`), render the dark-mode Leaflet map with the blue route polyline, and capture perfectly framed `1600x1200` PNG thumbnails into the `public/images/roadtrips/` directory.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 3. "PERSONAL" Fractured Typography
+The portfolio heavily leverages CSS `clip-path` and `translate` properties to create "fractured" or "fault-line" typographic effects, specifically on the "PERSONAL" section header. 
+- The word is split exactly in half horizontally using `::before` (top) and `::after` (bottom) pseudo-elements. 
+- The bottom halves of P, E, R, S are shifted to the right (`translateX`), while the bottom halves of N, A, L are shifted to the left (negative `translateX`) to create visual tension pulling away from the central "O".
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Development Commands
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+# Start the local development server
+npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Update the OSRM route cache for newly added road trips
+node scripts/fetchRoutes.js
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Regenerate map thumbnails for all road trips
+# (Requires the dev server to be running on port 5174 locally)
+node scripts/captureThumbnails.js
 ```

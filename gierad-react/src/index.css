@@ -201,7 +201,7 @@ ul {
 /* E */
 .graphic-title span:nth-child(2) { transform: none; margin-left: -1vw; }
 .graphic-title span:nth-child(2)::before { color: #F0AB00; }
-.graphic-title span:nth-child(2)::after { color: #4CA90C; transform: translateY(0.35em) translateX(0); } /* Deep physical separation tightened */
+.graphic-title span:nth-child(2)::after { color: #4CA90C; transform: translateY(0.12em) translateX(0); } /* Deep physical separation tightened */
 
 /* R */
 .graphic-title span:nth-child(3) { transform: none; margin-left: -1vw; }
@@ -219,19 +219,19 @@ ul {
 .graphic-title span:nth-child(5)::after { color: #F0AB00; transform: translateY(0.12em) translateX(0); } /* Precise vertical split */
 
 /* N */
-.graphic-title span:nth-child(6) { font-size: 0.7em; transform: translateY(0.4em); }
+.graphic-title span:nth-child(6) { font-size: 0.7em; transform: translateY(0.4em); margin-left: 1.5vw; }
 .graphic-title span:nth-child(6)::before { color: #00A3E0; }
-.graphic-title span:nth-child(6)::after { color: #E55302; }
+.graphic-title span:nth-child(6)::after { color: #E55302; transform: translateY(0.12em) translateX(-0.15em); }
 
 /* A */
 .graphic-title span:nth-child(7) { transform: none; margin-left: 1.5vw; }
 .graphic-title span:nth-child(7)::before { color: #F0AB00; }
-.graphic-title span:nth-child(7)::after { color: #4CA90C; transform: translateY(0.12em) translateX(0.08em); }
+.graphic-title span:nth-child(7)::after { color: #4CA90C; transform: translateY(0.12em) translateX(-0.12em); }
 
 /* L */
 .graphic-title span:nth-child(8) { transform: none; }
-.graphic-title span:nth-child(8)::before { color: #4CA90C; transform: translateY(0) translateX(-0.03em); } /* Top half fractured left tighter */
-.graphic-title span:nth-child(8)::after { color: #00A3E0; transform: translateY(0.12em) translateX(0.05em); }
+.graphic-title span:nth-child(8)::before { color: #4CA90C; } 
+.graphic-title span:nth-child(8)::after { color: #00A3E0; transform: translateY(0.12em) translateX(-0.18em); }
 
 @media (max-width: 768px) {
   .graphic-title {

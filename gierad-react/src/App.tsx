@@ -10,8 +10,15 @@ import Misc from './components/Misc';
 import Gallery from './components/Gallery';
 import RoadTrips from './components/RoadTrips';
 import Footer from './components/Footer';
+import SnapshotView from './components/SnapshotView';
 
 function App() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const snapshotId = urlParams.get('snapshot');
+
+  if (snapshotId !== null) {
+    return <SnapshotView id={parseInt(snapshotId, 10)} />;
+  }
   useEffect(() => {
     // Set dark mode by default
     document.body.classList.add('dark-mode');

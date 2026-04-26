@@ -4,8 +4,8 @@ export const aboutData = {
   company: "Apple",
   location: "Pittsburgh, PA",
   bio: [
-    "I'm a Computer Scientist and a Senior Manager of AI and Machine Learning at Apple. I lead an engineering organization under Machine Intelligence Neural Design (MIND) at SWE AIML. My team specializes in on-device AI, where we innovate in multimodal machine learning with vision, audio, motion, and other sensors. We also work on ML innovations bridging the gap between SWE and Foundation Models. We own and have contributed to several products and features across the Apple ecosystem. <a href=\"#features\"><strong>See Select Features Shipped ↓</strong></a>",
-    "<i>Update:<br/> I recently became an alumnus of Harvard Business School (2026) through their Executive Education program. It was a lot of work, but I am done!</i>",
+    "I'm a Computer Scientist and a Senior Manager of AI and Machine Learning at Apple. I lead an engineering organization under Machine Intelligence Neural Design (MIND) at SWE AIML. We're a product team specializing in on-device AI, where we innovate on multimodal ML with vision, audio, text, motion, and other sensors. We also work on ML innovations bridging the gap between SWE and Foundation Models. We own and have contributed to several Apple products and features. <a href=\"#features\"><strong>See Features Shipped ↓</strong></a>. We also publish in premier venues in ML and technical HCI.",
+    "<i>Update:<br/> I recently finished my Exec MBA and achieved alumni status from Harvard Business School (2026, via their Exec Ed program). It's been a lot of work, but I'm finally done!</i>",
     "Prior to Apple, I completed my Ph.D. at Carnegie Mellon University's School of Computer Science, where I was a founding member of the Future Interfaces Group. Prior to Apple, I was a Google Ph.D. Fellow, a recipient of the Fast Company Innovation by Design Award, a Disney Imagineer, and a recipient of ten Best Paper Awards and Nominations at premier venues in human-computer interaction. I'm also an Affiliate Professor at Carnegie Mellon University's School of Computer Science and Human-Computer Interaction Institute."
   ],
   links: {
@@ -1747,94 +1747,241 @@ export const pressData = [
 
 export const galleryData = [
   {
-    "src": "/images/travel/borabora_01_highres.jpg",
-    "highRes": "/images/travel/borabora_01_highres.jpg",
-    "width": 1080,
-    "height": 720,
-    "title": "Bora Bora, French Polynesia"
+    "src": "/images/parks/GLParkSeries-1.jpg",
+    "highRes": "/images/parks/GLParkSeries-1.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 1"
   },
   {
-    "src": "/images/travel/northernlights_highres.jpg",
-    "highRes": "/images/travel/northernlights_highres.jpg",
-    "width": 1080,
-    "height": 720,
-    "title": "Northern Lights, Reykjavik, Iceland"
+    "src": "/images/parks/GLParkSeries-2.jpg",
+    "highRes": "/images/parks/GLParkSeries-2.jpg",
+    "width": 1440,
+    "height": 958,
+    "title": "National Park Series - 2"
   },
   {
-    "src": "/images/travel/arches_delicatearch_highres.jpg",
-    "highRes": "/images/travel/arches_delicatearch_highres.jpg",
-    "width": 1080,
-    "height": 720,
-    "title": "Delicate Arch, Arches National Park, Utah"
+    "src": "/images/parks/GLParkSeries-3.jpg",
+    "highRes": "/images/parks/GLParkSeries-3.jpg",
+    "width": 1440,
+    "height": 948,
+    "title": "National Park Series - 3"
   },
   {
-    "src": "/images/travel/glencoe_highres.jpg",
-    "highRes": "/images/travel/glencoe_highres.jpg",
-    "width": 1080,
-    "height": 747,
-    "title": "The Highlands, Scotland"
+    "src": "/images/parks/GLParkSeries-4.jpg",
+    "highRes": "/images/parks/GLParkSeries-4.jpg",
+    "width": 1440,
+    "height": 1080,
+    "title": "National Park Series - 4"
   },
   {
-    "src": "/images/travel/oban_highres.jpg",
-    "highRes": "/images/travel/oban_highres.jpg",
-    "width": 1080,
-    "height": 1350,
-    "title": "Sunset at Oban, Scotland"
+    "src": "/images/parks/GLParkSeries-5.jpg",
+    "highRes": "/images/parks/GLParkSeries-5.jpg",
+    "width": 1440,
+    "height": 958,
+    "title": "National Park Series - 5"
   },
   {
-    "src": "/images/travel/kaafu_highres.jpg",
-    "highRes": "/images/travel/kaafu_highres.jpg",
+    "src": "/images/parks/GLParkSeries-6.jpg",
+    "highRes": "/images/parks/GLParkSeries-6.jpg",
+    "width": 1440,
+    "height": 948,
+    "title": "National Park Series - 6"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-7.jpg",
+    "highRes": "/images/parks/GLParkSeries-7.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 7"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-8.jpg",
+    "highRes": "/images/parks/GLParkSeries-8.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 8"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-9.jpg",
+    "highRes": "/images/parks/GLParkSeries-9.jpg",
+    "width": 1440,
+    "height": 1063,
+    "title": "National Park Series - 9"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-10.jpg",
+    "highRes": "/images/parks/GLParkSeries-10.jpg",
+    "width": 1440,
+    "height": 958,
+    "title": "National Park Series - 10"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-11.jpg",
+    "highRes": "/images/parks/GLParkSeries-11.jpg",
+    "width": 1440,
+    "height": 958,
+    "title": "National Park Series - 11"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-12.jpg",
+    "highRes": "/images/parks/GLParkSeries-12.jpg",
+    "width": 1440,
+    "height": 1080,
+    "title": "National Park Series - 12"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-13.jpg",
+    "highRes": "/images/parks/GLParkSeries-13.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 13"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-14.jpg",
+    "highRes": "/images/parks/GLParkSeries-14.jpg",
     "width": 1080,
+    "height": 1440,
+    "title": "National Park Series - 14"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-15.jpg",
+    "highRes": "/images/parks/GLParkSeries-15.jpg",
+    "width": 960,
+    "height": 1440,
+    "title": "National Park Series - 15"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-16.jpg",
+    "highRes": "/images/parks/GLParkSeries-16.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 16"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-17.jpg",
+    "highRes": "/images/parks/GLParkSeries-17.jpg",
+    "width": 1440,
+    "height": 953,
+    "title": "National Park Series - 17"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-18.jpg",
+    "highRes": "/images/parks/GLParkSeries-18.jpg",
+    "width": 1440,
+    "height": 958,
+    "title": "National Park Series - 18"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-19.jpg",
+    "highRes": "/images/parks/GLParkSeries-19.jpg",
+    "width": 1440,
     "height": 810,
-    "title": "Kaafu Atoll, Maldives"
+    "title": "National Park Series - 19"
   },
   {
-    "src": "/images/travel/kalalautrail_highres.jpg",
-    "highRes": "/images/travel/kalalautrail_highres.jpg",
-    "width": 1080,
-    "height": 720,
-    "title": "Kalalau Trail, Hawaii"
+    "src": "/images/parks/GLParkSeries-20.jpg",
+    "highRes": "/images/parks/GLParkSeries-20.jpg",
+    "width": 1440,
+    "height": 958,
+    "title": "National Park Series - 20"
   },
   {
-    "src": "/images/travel/mahabalipuram_highres.jpg",
-    "highRes": "/images/travel/mahabalipuram_highres.jpg",
-    "width": 1080,
-    "height": 810,
-    "title": "Mahabalipuram, Tamil Nadu, India"
+    "src": "/images/parks/GLParkSeries-21.jpg",
+    "highRes": "/images/parks/GLParkSeries-21.jpg",
+    "width": 1440,
+    "height": 958,
+    "title": "National Park Series - 21"
   },
   {
-    "src": "/images/travel/taughannock_highres.jpg",
-    "highRes": "/images/travel/taughannock_highres.jpg",
-    "width": 1080,
-    "height": 1441,
-    "title": "Taughannock Falls, Ithaca, New York"
+    "src": "/images/parks/GLParkSeries-22.jpg",
+    "highRes": "/images/parks/GLParkSeries-22.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 22"
   },
   {
-    "src": "/images/travel/svartifoss_highres.jpg",
-    "highRes": "/images/travel/svartifoss_highres.jpg",
-    "width": 1080,
-    "height": 720,
-    "title": "Svartifoss, Iceland"
+    "src": "/images/parks/GLParkSeries-23.jpg",
+    "highRes": "/images/parks/GLParkSeries-23.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 23"
   },
   {
-    "src": "/images/travel/mesaarch_highres.jpg",
-    "highRes": "/images/travel/mesaarch_highres.jpg",
-    "width": 1080,
-    "height": 720,
-    "title": "Mesa Arch, Canyonlands National Park, Utah"
+    "src": "/images/parks/GLParkSeries-24.jpg",
+    "highRes": "/images/parks/GLParkSeries-24.jpg",
+    "width": 1440,
+    "height": 958,
+    "title": "National Park Series - 24"
   },
   {
-    "src": "/images/travel/dunes_highres.jpg",
-    "highRes": "/images/travel/dunes_highres.jpg",
+    "src": "/images/parks/GLParkSeries-25.jpg",
+    "highRes": "/images/parks/GLParkSeries-25.jpg",
     "width": 1080,
-    "height": 810,
-    "title": "Great Sand Dunes National Park, Colorado"
+    "height": 1440,
+    "title": "National Park Series - 25"
   },
   {
-    "src": "/images/travel/kirkjufell_highres.jpg",
-    "highRes": "/images/travel/kirkjufell_highres.jpg",
-    "width": 1080,
-    "height": 720,
-    "title": "Kirkjufell, Iceland"
+    "src": "/images/parks/GLParkSeries-26.jpg",
+    "highRes": "/images/parks/GLParkSeries-26.jpg",
+    "width": 953,
+    "height": 1440,
+    "title": "National Park Series - 26"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-27.jpg",
+    "highRes": "/images/parks/GLParkSeries-27.jpg",
+    "width": 1440,
+    "height": 948,
+    "title": "National Park Series - 27"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-28.jpg",
+    "highRes": "/images/parks/GLParkSeries-28.jpg",
+    "width": 1440,
+    "height": 948,
+    "title": "National Park Series - 28"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-29.jpg",
+    "highRes": "/images/parks/GLParkSeries-29.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 29"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-30.jpg",
+    "highRes": "/images/parks/GLParkSeries-30.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 30"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-31.jpg",
+    "highRes": "/images/parks/GLParkSeries-31.jpg",
+    "width": 1440,
+    "height": 958,
+    "title": "National Park Series - 31"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-32.jpg",
+    "highRes": "/images/parks/GLParkSeries-32.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 32"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-33.jpg",
+    "highRes": "/images/parks/GLParkSeries-33.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 33"
+  },
+  {
+    "src": "/images/parks/GLParkSeries-34.jpg",
+    "highRes": "/images/parks/GLParkSeries-34.jpg",
+    "width": 1440,
+    "height": 960,
+    "title": "National Park Series - 34"
   }
 ];

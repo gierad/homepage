@@ -640,6 +640,39 @@ export const roadTripsData = [
         ],
         thumbnailUrl: "/images/roadtrips/thumb_madeira.jpg",
         mapUrl: "/images/roadtrips/map_madeira.jpg",
-        year: "2022"
+    },
+    {
+        title: "Mallorca",
+        miles: 120,
+        stops: [
+            { name: "Palma", coords: [39.5696, 2.6502] },
+            { name: "Sant Pere", coords: [39.7369, 3.2764] },
+            { name: "Alcudia", coords: [39.8532, 3.1235] },
+            { name: "Port De Pollenca", coords: [39.9077, 3.0841] },
+            { name: "Formentor", coords: [39.9327, 3.1110] },
+            { name: "Cap de Formentor", coords: [39.9614, 3.2119] },
+            { name: "Cal Sant Vicenc", coords: [39.9194, 3.0536] },
+            { name: "Polenca", coords: [39.8784, 3.0163] },
+            { name: "Palma", coords: [39.5696, 2.6502] }
+        ],
+        thumbnailUrl: "/images/roadtrips/trip-30.png",
+        mapUrl: "/images/roadtrips/trip-30.png",
+        year: "2023"
+    },
+    {
+        title: "Menorca",
+        miles: 80,
+        stops: [
+            { name: "Ciutadella", coords: [40.0031, 3.8361] },
+            { name: "El Toro", coords: [39.9774, 4.1039] },
+            { name: "Fornells", coords: [40.0543, 4.1293] },
+            { name: "Mao", coords: [39.8895, 4.2647] },
+            { name: "Cala Galdana", coords: [39.9366, 3.9599] },
+            { name: "Sa Caleta", coords: [39.9822, 3.8344] },
+            { name: "Ciutadella", coords: [40.0031, 3.8361] }
+        ],
+        thumbnailUrl: "/images/roadtrips/trip-31.png",
+        mapUrl: "/images/roadtrips/trip-31.png",
+        year: "2023"
     }
 ];

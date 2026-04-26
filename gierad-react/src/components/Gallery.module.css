@@ -1,7 +1,7 @@
 .section {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl);
 }
 
 .sectionTitle {
@@ -15,21 +15,80 @@
     padding-left: var(--spacing-sm);
 }
 
+.projectTitle {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 400;
+}
+
+.projectDescription {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.poemQuote {
+    margin: var(--spacing-lg) 0 var(--spacing-xl) var(--spacing-md);
+    padding-left: var(--spacing-lg);
+    border-left: 2px solid var(--text-tertiary);
+}
+
+.poemText {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.02em;
+}
+
+.poemFooter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    font-family: var(--font-sans);
+}
+
+.poemAuthor {
+    font-weight: 400;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+}
+
+.poemCite {
+    font-size: 0.8rem;
+    font-style: normal;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+}
+
+.poemSource {
+    font-style: italic;
+}
+
 .grid {
-    column-count: 3;
-    column-gap: var(--spacing-sm);
+    display: flex;
+    gap: var(--spacing-sm);
     width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    flex: 1;
 }
 
 .item {
     position: relative;
     width: 100%;
-    margin-bottom: var(--spacing-sm);
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid;
     overflow: hidden;
-    border-radius: 4px;
     cursor: pointer;
     /* Soft shadow from our modern refinements */
     box-shadow: var(--shadow-sm);
@@ -45,27 +104,18 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    filter: grayscale(100%);
-    transition: transform var(--transition-slow), filter var(--transition-slow);
-    /* Prevent image rendering jumps */
+    /* Prevent image rendering jumps and dragging */
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
 
-.item:hover .image,
-.item.active .image {
-    -webkit-transform: scale(1.03) translate3d(0, 0, 0);
-    transform: scale(1.03) translate3d(0, 0, 0);
-    filter: grayscale(0%);
-}
 
-@media (max-width: 900px) {
-    .grid {
-        column-count: 2;
-    }
-}
+
 
 /* Lightbox Styles */
 .lightbox {
@@ -98,10 +148,12 @@
     max-width: 100%;
     max-height: 90vh;
     object-fit: contain;
-    border-radius: 4px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     transform: scale(0.95);
     animation: zoomIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .closeBtn {
