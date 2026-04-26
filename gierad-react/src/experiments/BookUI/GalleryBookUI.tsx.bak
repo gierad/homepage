@@ -1,0 +1,214 @@
+import React, { useState, useEffect } from 'react';
+import styles from './Gallery.module.css';
+import { galleryData } from '../data/cv';
+import { useScrollSpy } from '../hooks/useScrollSpy';
+// @ts-ignore
+import HTMLFlipBook from 'react-pageflip';
+
+const Page = React.forwardRef<HTMLDivElement, { children?: React.ReactNode; className?: string; pageNum?: number; isLeft?: boolean }>((props, ref) => {
+    return (
+        <div className={`${styles.page} ${props.isLeft ? styles.pageLeft : styles.pageRight} ${props.className || ''}`} ref={ref}>
+            <div className={styles.pageContent}>
+                {props.children}
+            </div>
+            {props.pageNum && (
+                <div className={styles.pageNumber}>{props.pageNum}</div>
+            )}
+        </div>
+    );
+});
+Page.displayName = 'Page';
+
+export default function Gallery() {
+    const listRef = useScrollSpy(`.${styles.item}`, styles.active);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [columns, setColumns] = useState(3);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setColumns(window.innerWidth > 900 ? 3 : 2);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Close flipbook on Escape key
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setSelectedIndex(null);
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [selectedIndex]);
+
+    const openLightbox = (index: number) => setSelectedIndex(index);
+    const closeLightbox = () => setSelectedIndex(null);
+
+    // Distribute data horizontally to preserve left-to-right flow across columns
+    const colData = Array.from({ length: columns }, () => [] as { photo: typeof galleryData[0], originalIndex: number }[]);
+    galleryData.forEach((photo, idx) => {
+        let colIndex = idx % columns;
+        if (idx === galleryData.length - 1) {
+            colIndex = columns - 1;
+        }
+        colData[colIndex].push({ photo, originalIndex: idx });
+    });
+
+    // Pre-calculate page spreads for the flipbook to group portrait images
+    const spreads: (typeof galleryData[0])[][] = [];
+    const photoToSpread = new Map<number, number>();
+
+    let i = 0;
+    let spreadIdx = 0;
+    while (i < galleryData.length) {
+        const photo1 = galleryData[i];
+        const isPortrait1 = photo1.height > photo1.width;
+        
+        if (isPortrait1 && i + 1 < galleryData.length) {
+            const photo2 = galleryData[i + 1];
+            const isPortrait2 = photo2.height > photo2.width;
+            
+            // If two consecutive portraits are found, group them on the same spread
+            if (isPortrait2) {
+                spreads.push([photo1, photo2]);
+                photoToSpread.set(i, spreadIdx);
+                photoToSpread.set(i + 1, spreadIdx);
+                i += 2;
+                spreadIdx++;
+                continue;
+            }
+        }
+        
+        // Otherwise, it's a single image spread
+        spreads.push([photo1]);
+        photoToSpread.set(i, spreadIdx);
+        i += 1;
+        spreadIdx++;
+    }
+
+    return (
+        <section id="photography" className={styles.section}>
+            <h2 className={styles.sectionTitle}>Photography</h2>
+            <p className="section-subtitle">
+                My photography is highly influenced by Sebastião Salgado, Ansel Adams, Fan Ho, Chang Chao-Tang, Eliott Erwitt, Alex Webb, and Rebecca Norris Webb. I combine techniques from landscape photography, street photography, and computational photography to capture stories and decisive moments from images.
+            </p>
+
+            <h3 className={styles.projectTitle}>Current Project: Already Immortal</h3>
+            
+            <blockquote className={styles.poemQuote}>
+                <p className={styles.poemText}>
+                    "...amid Nature's loving destructions, her beautiful deaths. Talk of immortality!<br />
+                    After a whole day in the woods, we are already immortal.<br />
+                    When is the end of such a day?"
+                </p>
+                <footer className={styles.poemFooter}>
+                    <span className={styles.poemAuthor}>— John Muir</span>
+                    <cite className={styles.poemCite}>
+                        Yosemite, California, 1875
+                    </cite>
+                </footer>
+            </blockquote>
+
+            <p className={styles.projectDescription}>
+                I'm currently authoring a monograph exploring the vast scales of time, contrasting human fragility against nature's immense, unyielding geological timeline. Triggered by my wife's recent cancer diagnosis — thankfully, she is well — this project is a meditation on life's brevity and our shared love for nature and adventure. Using our mission to visit all 63 U.S. National Parks as a backdrop, this work captures the tension between fleeting human experience and nature's relentless forward momentum. Through my photographs, I aim to show that human struggles can become transformative, in much the same way as violent eruptions, shifting tectonic plates, and relentless erosion create undeniable beauty of their own.
+            </p>
+
+            <div className={styles.grid} ref={listRef}>
+                {colData.map((col, colIdx) => (
+                    <div key={colIdx} className={styles.column}>
+                        {col.map(({ photo, originalIndex }) => (
+                            <div
+                                key={originalIndex}
+                                className={styles.item}
+                                onClick={() => openLightbox(originalIndex)}
+                                role="button"
+                                tabIndex={0}
+                                aria-label={`View larger version of ${photo.title || 'photo'}`}
+                            >
+                                <img
+                                    src={photo.src}
+                                    alt={photo.title || "Photography Visual"}
+                                    className={styles.image}
+                                    loading="lazy"
+                                    onContextMenu={(e) => e.preventDefault()}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                ))}
+            </div>
+
+            {selectedIndex !== null && (
+                <div className={styles.lightbox} onClick={closeLightbox}>
+                    <button className={styles.closeBtn} onClick={closeLightbox} aria-label="Close book">
+                        &times;
+                    </button>
+                    <div className={styles.bookWrapper} onClick={(e) => e.stopPropagation()}>
+                        <HTMLFlipBook 
+                            width={550} 
+                            height={400} 
+                            size="stretch"
+                            minWidth={315}
+                            maxWidth={1000}
+                            minHeight={400}
+                            maxHeight={1000}
+                            maxShadowOpacity={0.5}
+                            showCover={true}
+                            startPage={selectedIndex !== null ? 4 + ((photoToSpread.get(selectedIndex) || 0) * 2) : 4}
+                            className={styles.flipBook}
+                            style={{ margin: '0 auto' }}
+                        >
+                            {/* Page 1: Cover (Right) */}
+                            <Page className={styles.pageCover}>
+                                <h1>Already Immortal</h1>
+                            </Page>
+                            
+                            {/* Page 2: Quote (Left) */}
+                            <Page className={styles.pageQuote} isLeft={true} pageNum={2}>
+                                <div className={styles.poemQuoteInside}>
+                                    <p className={styles.poemTextInside}>
+                                        "...amid Nature's loving destructions, her beautiful deaths. Talk of immortality!<br />
+                                        After a whole day in the woods, we are already immortal.<br />
+                                        When is the end of such a day?"
+                                    </p>
+                                    <footer className={styles.poemFooterInside}>
+                                        <span className={styles.poemAuthorInside}>— John Muir</span>
+                                        <cite className={styles.poemCiteInside}>
+                                            Yosemite, California, 1875
+                                        </cite>
+                                    </footer>
+                                </div>
+                            </Page>
+
+                            {/* Page 3: Blank (Right) */}
+                            <Page className={styles.pageBlank} pageNum={3} />
+
+                            {/* Pages 4+: Loop over spreads (Left: Caption, Right: Photo) */}
+                            {spreads.flatMap((spread, idx) => {
+                                const leftPageNum = 4 + (idx * 2);
+                                const rightPageNum = leftPageNum + 1;
+                                return [
+                                    /* Left Page: Blank with Caption */
+                                    <Page key={`left-${idx}`} className={styles.pageBlank} isLeft={true} pageNum={leftPageNum}>
+                                        <div className={styles.pageLeftCaption}>
+                                            {spread.map(p => p.title).filter(Boolean).join(" & ")}
+                                        </div>
+                                    </Page>,
+                                    /* Right Page: Photo(s) */
+                                    <Page key={`photo-${idx}`} className={styles.pagePhoto} pageNum={rightPageNum}>
+                                        <div className={styles.photoWrapper}>
+                                            {spread.map((photo, pIdx) => (
+                                                <img key={pIdx} src={photo.src} alt={photo.title || "Photograph"} className={styles.bookImage} />
+                                            ))}
+                                        </div>
+                                    </Page>
+                                ];
+                            })}
+                        </HTMLFlipBook>
+                    </div>
+                </div>
+            )}
+        </section>
+    );
+}

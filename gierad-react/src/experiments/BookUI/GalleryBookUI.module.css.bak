@@ -124,7 +124,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 9999;
@@ -135,158 +135,155 @@
     animation: fadeIn 0.2s ease-out forwards;
 }
 
-.lightboxContent {
-    position: relative;
-    width: 60vw;
-    height: 70vh;
+.bookWrapper {
+    width: 90vw;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10vh;
 }
 
-.expandedImage {
-    position: absolute;
-    top: 0;
-    left: 0;
+.flipBook {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.page {
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.03);
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    color: #111;
+}
+
+:global(.dark-mode) .page {
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+.pageContent {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageCover {
+    background-color: #ffffff;
+}
+
+:global(.dark-mode) .pageCover {
+    background-color: #ffffff;
+}
+
+.pageCover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #111;
+}
+
+.pageQuote {
+    padding: 2rem;
+}
+
+.poemQuoteInside {
+    max-width: 85%;
+    text-align: left;
+}
+
+.poemTextInside {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.02em;
+}
+
+.poemFooterInside {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    font-family: var(--font-sans);
+}
+
+.poemAuthorInside {
+    font-weight: 400;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: #444;
+}
+
+.poemCiteInside {
+    font-size: 0.8rem;
+    font-style: normal;
+    color: #777;
+    line-height: 1.5;
+}
+
+.pagePhoto {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.photoWrapper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 4% 3% 20% 3%; /* 4% top, 3% sides, 20% bottom */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5%; /* Tighter spacing between multiple images on the same spread */
+}
+
+.bookImage {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    opacity: 0;
-    /* Feature flag: uncomment for smooth cross-dissolve */
-    /* transition: opacity 0.7s ease; */
+    flex: 1; /* Allows multiple images to share space evenly */
+    min-width: 0; /* Prevents flex flex overflow when scaling down */
     -webkit-user-select: none;
     user-select: none;
     -webkit-user-drag: none;
-    pointer-events: none;
 }
 
-.expandedImageActive {
-    opacity: 1;
-    pointer-events: auto;
+.pageBlank {
+    /* Intentionally blank */
 }
 
-.lightboxPageNumber {
-    position: fixed;
+.pageLeftCaption {
+    position: absolute;
     bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Playfair Display', serif;
-    font-size: 0.85rem;
-    color: #666;
-    letter-spacing: 0.05em;
-    animation: fadeIn 0.3s ease-out forwards;
-}
-
-.navBtn {
-    position: fixed;
-    bottom: 2rem;
-    background: none;
-    border: none;
-    font-family: var(--font-sans);
-    font-size: 1.25rem;
-    font-weight: 100;
-    color: #999;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: color 0.2s ease, opacity 0.2s ease;
-    z-index: 10000;
-    opacity: 0.7;
-    animation: fadeIn 0.3s ease-out forwards;
-}
-.navBtn:hover {
-    color: #111;
-    opacity: 1;
-}
-
-.navBtnPrev {
     left: 2rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    color: #888;
+    letter-spacing: 0.05em;
 }
 
-.navBtnNext {
-    right: 2rem;
+.pageNumber {
+    position: absolute;
+    bottom: 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    color: #aaa;
 }
 
-/* Index View Styles */
-.indexView {
-    position: relative;
-    width: 90vw;
-    height: 85vh;
-    background: transparent;
-    overflow-y: auto;
-    padding: var(--spacing-xl) var(--spacing-md);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: fadeIn 0.3s ease-out forwards;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-.indexView::-webkit-scrollbar {
+.pageLeft .pageNumber {
     display: none;
 }
 
-.indexHeader {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #333;
-    font-weight: 400;
-    margin-bottom: var(--spacing-xl);
-    letter-spacing: 0.05em;
-    text-align: center;
-}
-
-.indexGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: var(--spacing-xl) var(--spacing-lg);
-    width: 100%;
-    max-width: 1200px;
-    padding-bottom: 10vh;
-}
-
-.indexItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-}
-
-.indexThumbWrapper {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    margin-bottom: var(--spacing-sm);
-    background-color: #f5f5f5;
-}
-
-.indexThumb {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.indexDetails {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.25rem;
-}
-
-.indexTitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.75rem;
-    color: #333;
-}
-
-.indexCaption {
-    font-family: var(--font-sans);
-    font-size: 0.6rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+.pageRight .pageNumber {
+    left: 2rem;
 }
 
 .closeBtn {
@@ -295,7 +292,7 @@
     right: var(--spacing-md);
     background: none;
     border: none;
-    color: #111;
+    color: white;
     font-size: 3rem;
     font-weight: 300;
     line-height: 1;
@@ -328,11 +325,5 @@
     to {
         transform: scale(1);
         opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
-    .lightboxContent {
-        max-width: 80vw;
     }
 }

@@ -27,6 +27,9 @@ The portfolio heavily leverages CSS `clip-path` and `translate` properties to cr
 - The word is split exactly in half horizontally using `::before` (top) and `::after` (bottom) pseudo-elements. 
 - The bottom halves of P, E, R, S are shifted to the right (`translateX`), while the bottom halves of N, A, L are shifted to the left (negative `translateX`) to create visual tension pulling away from the central "O".
 
+### 4. Book UI Experiment (Archived)
+An experimental UI implementation using `react-pageflip` to emulate a physical digital monograph was developed but ultimately archived in favor of the clean lightbox approach. The original experimental code is preserved for future reference in `src/experiments/BookUI/`.
+
 ## Development Commands
 
 ```bash

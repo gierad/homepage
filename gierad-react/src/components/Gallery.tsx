@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './Gallery.module.css';
-import { galleryData } from '../data/cv';
+import { galleryData } from '../data/galleryData';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 
 export default function Gallery() {
@@ -22,8 +22,8 @@ export default function Gallery() {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape') setSelectedIndex(null);
             if (selectedIndex !== null) {
-                if (e.key === 'ArrowRight') setSelectedIndex((selectedIndex + 1) % galleryData.length);
-                if (e.key === 'ArrowLeft') setSelectedIndex((selectedIndex - 1 + galleryData.length) % galleryData.length);
+                if (e.key === 'ArrowRight') setSelectedIndex((selectedIndex + 1) % (galleryData.length + 1));
+                if (e.key === 'ArrowLeft') setSelectedIndex((selectedIndex - 1 + (galleryData.length + 1)) % (galleryData.length + 1));
             }
         };
         window.addEventListener('keydown', handleKeyDown);
@@ -100,14 +100,61 @@ export default function Gallery() {
                     <button className={styles.closeBtn} onClick={closeLightbox} aria-label="Close lightbox">
                         &times;
                     </button>
-                    <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
-                        <img
-                            src={galleryData[selectedIndex].src}
-                            alt={galleryData[selectedIndex].title || "Expanded photography"}
-                            className={styles.expandedImage}
-                            onContextMenu={(e) => e.preventDefault()}
-                        />
-                    </div>
+                    <button 
+                        className={`${styles.navBtn} ${styles.navBtnPrev}`} 
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedIndex((selectedIndex - 1 + (galleryData.length + 1)) % (galleryData.length + 1));
+                        }}
+                        aria-label="Previous page"
+                    >
+                        &larr;
+                    </button>
+                    <button 
+                        className={`${styles.navBtn} ${styles.navBtnNext}`} 
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedIndex((selectedIndex + 1) % (galleryData.length + 1));
+                        }}
+                        aria-label="Next page"
+                    >
+                        &rarr;
+                    </button>
+                    {selectedIndex === galleryData.length ? (
+                        <div className={styles.indexView} onClick={(e) => e.stopPropagation()}>
+                            <h2 className={styles.indexHeader}>Plates</h2>
+                            <div className={styles.indexGrid}>
+                                {galleryData.map((photo, i) => (
+                                    <div key={i} className={styles.indexItem} onClick={() => setSelectedIndex(i)}>
+                                        <div className={styles.indexThumbWrapper}>
+                                            <img src={photo.src} alt={photo.title} className={styles.indexThumb} loading="lazy" />
+                                        </div>
+                                        <div className={styles.indexDetails}>
+                                            <span className={styles.indexTitle}>{photo.title}</span>
+                                            {photo.caption && <span className={styles.indexCaption}>{photo.caption}</span>}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className={styles.lightboxPageNumber}>Index</div>
+                        </div>
+                    ) : (
+                        <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
+                            {galleryData.map((photo, index) => (
+                                <img
+                                    key={`img-${index}`}
+                                    src={photo.src}
+                                    alt={photo.title || "Expanded photography"}
+                                    className={`${styles.expandedImage} ${index === selectedIndex ? styles.expandedImageActive : ''}`}
+                                    onContextMenu={(e) => e.preventDefault()}
+                                    loading={selectedIndex !== null && Math.abs(index - selectedIndex) <= 1 ? "eager" : "lazy"}
+                                />
+                            ))}
+                            <div className={styles.lightboxPageNumber}>
+                                {selectedIndex + 1}
+                            </div>
+                        </div>
+                    )}
                 </div>
             )}
         </section>
