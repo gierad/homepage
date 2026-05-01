@@ -67,7 +67,7 @@ export default function Gallery() {
             </blockquote>
 
             <p className={styles.projectDescription}>
-                I'm currently authoring a monograph exploring the vast scales of time, contrasting human fragility against nature's immense, unyielding geological timeline. Triggered by my wife's recent cancer diagnosis — thankfully, she is well — this project is a meditation on life's brevity and our shared love for nature and adventure. Using our mission to visit all 63 U.S. National Parks as a backdrop, this work captures the tension between fleeting human experience and nature's relentless forward momentum. Through my photographs, I aim to show that human struggles can become transformative, in much the same way as violent eruptions, shifting tectonic plates, and relentless erosion create undeniable beauty of their own.
+                I'm currently authoring a monograph exploring the vast scales of time, contrasting human fragility against nature's immense, unyielding geological timeline. Triggered by my wife's advanced, life-threatening diagnosis — thankfully, she is well — this project is a meditation on life's brevity and our shared love for nature and adventure. Using our mission to visit all 63 U.S. National Parks as a backdrop, this work captures the tension between fleeting human experience and nature's relentless forward momentum. Through my photographs, I aim to show that human struggles can become transformative, in much the same way as violent eruptions, shifting tectonic plates, and relentless erosion create undeniable beauty of their own.
             </p>
 
             <div className={styles.grid} ref={listRef}>
@@ -100,8 +100,23 @@ export default function Gallery() {
                     <button className={styles.closeBtn} onClick={closeLightbox} aria-label="Close lightbox">
                         &times;
                     </button>
-                    <button 
-                        className={`${styles.navBtn} ${styles.navBtnPrev}`} 
+                    <button
+                        className={styles.indexBtn}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedIndex(galleryData.length);
+                        }}
+                        aria-label="View Plates Index"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <rect x="2" y="2" width="7" height="7" />
+                            <rect x="11" y="2" width="7" height="7" />
+                            <rect x="2" y="11" width="7" height="7" />
+                            <rect x="11" y="11" width="7" height="7" />
+                        </svg>
+                    </button>
+                    <button
+                        className={`${styles.navBtn} ${styles.navBtnPrev}`}
                         onClick={(e) => {
                             e.stopPropagation();
                             setSelectedIndex((selectedIndex - 1 + (galleryData.length + 1)) % (galleryData.length + 1));
@@ -110,8 +125,8 @@ export default function Gallery() {
                     >
                         &larr;
                     </button>
-                    <button 
-                        className={`${styles.navBtn} ${styles.navBtnNext}`} 
+                    <button
+                        className={`${styles.navBtn} ${styles.navBtnNext}`}
                         onClick={(e) => {
                             e.stopPropagation();
                             setSelectedIndex((selectedIndex + 1) % (galleryData.length + 1));

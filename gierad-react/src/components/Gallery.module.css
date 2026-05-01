@@ -192,7 +192,7 @@
     text-transform: uppercase;
     transition: color 0.2s ease, opacity 0.2s ease;
     z-index: 10000;
-    opacity: 0.7;
+    opacity: 0.3;
     animation: fadeIn 0.3s ease-out forwards;
 }
 .navBtn:hover {
@@ -295,17 +295,30 @@
     right: var(--spacing-md);
     background: none;
     border: none;
-    color: #111;
+    color: #999;
     font-size: 3rem;
     font-weight: 300;
     line-height: 1;
     cursor: pointer;
     z-index: 10000;
-    opacity: 0.6;
+    opacity: 0.3;
     transition: opacity var(--transition-normal);
 }
 
-.closeBtn:hover {
+.indexBtn {
+    display: none; /* Hidden for now per user request */
+    position: absolute;
+    top: calc(var(--spacing-md) + 0.8rem);
+    left: var(--spacing-md);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    z-index: 10000;
+    opacity: 0.3;
+    transition: opacity var(--transition-normal);
+}
+.indexBtn:hover, .closeBtn:hover {
     opacity: 1;
 }
 
