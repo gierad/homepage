@@ -4,7 +4,7 @@ export const aboutData = {
   company: "Apple",
   location: "Pittsburgh, PA",
   bio: [
-    "I'm a Computer Scientist and a Senior Manager of AI and Machine Learning at Apple. I lead an engineering organization under Machine Intelligence Neural Design (MIND) at SWE AIML. We're a product team specializing in on-device AI, where we innovate on multimodal ML with vision, audio, text, motion, and other sensors. We also work on ML innovations bridging the gap between SWE and Foundation Models. We own and have contributed to several Apple products and features. <a href=\"#features\"><strong>See Features Shipped ↓</strong></a>. We also publish in premier venues in ML and technical HCI.",
+    "I'm a Computer Scientist and Senior Manager of AI and Machine Learning at Apple, where I lead an engineering organization within Machine Intelligence Neural Design (MIND) at SWE AIML. As a product team specializing in on-device AI, we build the core infrastructure for AI inference and optimization across all Apple operating systems. Our work spans multimodal machine learning— integrating vision, audio, text, and motion— and we also pioneer innovations that bridge the gap between traditional software engineering and Foundation Models. In addition to shipping features across numerous core Apple products (<a href=\"#features\"><strong>see Features Shipped ↓</strong></a>), our team regularly publishes in premier ML and technical HCI venues.",
     "<i>Update:<br/> I recently finished my Exec MBA and achieved alumni status from Harvard Business School (2026, via their Exec Ed program). It's been a lot of work, but I'm finally done!</i>",
     "Prior to Apple, I completed my Ph.D. at Carnegie Mellon University's School of Computer Science, where I was a founding member of the Future Interfaces Group. Prior to Apple, I was a Google Ph.D. Fellow, a recipient of the Fast Company Innovation by Design Award, a Disney Imagineer, and a recipient of ten Best Paper Awards and Nominations at premier venues in human-computer interaction. I'm also an Affiliate Professor at Carnegie Mellon University's School of Computer Science and Human-Computer Interaction Institute."
   ],
@@ -456,6 +456,18 @@ export const alumniData = [
 ];
 
 export const featuresData = [
+  {
+    "title": "iPhone Duo",
+    "description": "In collaboration with Core OS, Core Wi-Fi, and SWE Intelligent Systems: shipped StandBy for iPhone Duo, including low-power techniques leveraging ML sensing and the N1 chip for Wi-Fi motion and presence detection, delivering significant battery improvements over previous approaches even when not charging. iOS 27, iPhone Duo.",
+    "link": "https://www.apple.com/",
+    "imgSrc": "/projects/iPhoneDuo/thumbnail01.jpg"
+  },
+  {
+    "title": "Audio Intelligence with Live Rewind and Siri Recap",
+    "description": "In collaboration with Watch Software, Audio Technologies, Core OS, Core AI, and Vision Products: shipped Audio Intelligence features, specifically Live Rewind and Siri Recap. We made significant contributions to the core token generation and harness for the private on-device FM inference stack, enabling high-level conversation summaries that users can review later to jog their memory securely and privately. iOS 27, watchOS 27, Apple Watch Series 12, Apple Watch Ultra 4.",
+    "link": "https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/",
+    "imgSrc": "/projects/SiriRecapLiveRewind/thumbnail01.jpg"
+  },
   {
     "title": "Foundation Models\n\t\t\t\t\t\t\t\t\tFramework",
     "description": "In collaboration with SWE, Foundation Models framework allows developers to build on\n\t\t\t\t\t\t\t\tApple Intelligence to bring users new experiences that are intelligent, available when\n\t\t\t\t\t\t\t\tthey’re offline, and that protect their privacy, using AI inference that is free of\n\t\t\t\t\t\t\t\tcost. Includes Guided Generation, Tool calling, and more. iOS 26, watchOS 26, tvOS 26,\n\t\t\t\t\t\t\t\tmacOS Tahoe.",

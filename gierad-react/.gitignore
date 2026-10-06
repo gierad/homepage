@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# SQLite & Local Coffee Data
+*.sqlite
+*.sqlite3
+*.db
+public/coffee/api/data/coffee.sqlite
+public/coffee/api/config.php

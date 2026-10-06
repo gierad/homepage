@@ -11,8 +11,14 @@ import Gallery from './components/Gallery';
 import RoadTrips from './components/RoadTrips';
 import Footer from './components/Footer';
 import SnapshotView from './components/SnapshotView';
+import CoffeeApp from './coffee/CoffeeApp';
 
 function App() {
+  // Direct client-side route handling for /coffee
+  if (typeof window !== 'undefined' && window.location.pathname.startsWith('/coffee')) {
+    return <CoffeeApp />;
+  }
+
   const urlParams = new URLSearchParams(window.location.search);
   const snapshotId = urlParams.get('snapshot');
 

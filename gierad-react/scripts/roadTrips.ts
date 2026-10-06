@@ -656,5 +656,90 @@ export const roadTripsData: RoadTrip[] = [
         thumbnailUrl: "/images/roadtrips/thumb_madeira.jpg",
         mapUrl: "/images/roadtrips/map_madeira.jpg",
         year: "2022"
+    },
+    {
+        title: "Mallorca",
+        miles: 120,
+        stops: [
+            { name: "Palma", coords: [39.5696, 2.6502] },
+            { name: "Sant Pere", coords: [39.7369, 3.2764] },
+            { name: "Alcudia", coords: [39.8532, 3.1235] },
+            { name: "Port De Pollenca", coords: [39.9077, 3.0841] },
+            { name: "Formentor", coords: [39.9327, 3.1110] },
+            { name: "Cap de Formentor", coords: [39.9614, 3.2119] },
+            { name: "Cal Sant Vicenc", coords: [39.9194, 3.0536] },
+            { name: "Polenca", coords: [39.8784, 3.0163] },
+            { name: "Palma", coords: [39.5696, 2.6502] }
+        ],
+        thumbnailUrl: "/images/roadtrips/trip-30.png",
+        mapUrl: "/images/roadtrips/trip-30.png",
+        year: "2023"
+    },
+    {
+        title: "Menorca",
+        miles: 80,
+        stops: [
+            { name: "Ciutadella", coords: [40.0031, 3.8361] },
+            { name: "El Toro", coords: [39.9774, 4.1039] },
+            { name: "Fornells", coords: [40.0543, 4.1293] },
+            { name: "Mao", coords: [39.8895, 4.2647] },
+            { name: "Cala Galdana", coords: [39.9366, 3.9599] },
+            { name: "Sa Caleta", coords: [39.9822, 3.8344] },
+            { name: "Ciutadella", coords: [40.0031, 3.8361] }
+        ],
+        thumbnailUrl: "/images/roadtrips/trip-31.png",
+        mapUrl: "/images/roadtrips/trip-31.png",
+        year: "2023"
+    },
+    {
+        title: "The Great Plains",
+        miles: 1180,
+        stops: [
+            { name: "Rapid City, SD", coords: [44.0805, -103.2310] },
+            { name: "Dickinson, ND", coords: [46.8792, -102.7896] },
+            { name: "Theodore Roosevelt National Park North Unit", coords: [47.5855, -103.3705] },
+            { name: "Dickinson, ND", coords: [46.8792, -102.7896] },
+            { name: "Medora, ND", coords: [46.9142, -103.5246] },
+            { name: "Theodore Roosevelt National Park South Unit", coords: [46.9744, -103.5413] },
+            { name: "Rapid City, SD", coords: [44.0805, -103.2310] },
+            { name: "Wind Cave National Park", coords: [43.5574, -103.4839] },
+            { name: "Badlands National Park", coords: [43.8554, -102.3397] },
+            { name: "Rapid City, SD", coords: [44.0805, -103.2310] },
+            { name: "Devils Tower, WY", coords: [44.5902, -104.7146] },
+            { name: "Rapid City, SD", coords: [44.0805, -103.2310] },
+            { name: "Custer State Park", coords: [43.7663, -103.4184] },
+            { name: "Chadron, NE", coords: [42.8294, -102.9999] },
+            { name: "Rapid City, SD", coords: [44.0805, -103.2310] }
+        ],
+        thumbnailUrl: "/images/roadtrips/trip-32.png",
+        mapUrl: "/images/roadtrips/trip-32.png",
+        year: "2024"
+    },
+    {
+        title: "Grand Teton, Yellowstone, and Glacier",
+        miles: 1340,
+        stops: [
+            { name: "Jackson Hole, WY", coords: [43.4799, -110.7624] },
+            { name: "Island Park, ID", coords: [44.4241, -111.3697] },
+            { name: "Helena, MT", coords: [46.5891, -112.0391] },
+            { name: "Two Medicine Lakes, MT", coords: [48.4862, -113.3664] },
+            { name: "St. Mary's Lake, MT", coords: [48.6943, -113.5278] },
+            { name: "Logan Pass, MT", coords: [48.6966, -113.7178] },
+            { name: "Apgar, MT", coords: [48.5283, -113.9922] },
+            { name: "Logan Pass, MT", coords: [48.6966, -113.7178] },
+            { name: "St. Mary's Lake, MT", coords: [48.6943, -113.5278] },
+            { name: "Many Glacier, MT", coords: [48.7967, -113.6575] },
+            { name: "Bozeman, MT", coords: [45.6770, -111.0429] },
+            { name: "West Thumb, WY", coords: [44.4158, -110.5731] },
+            { name: "Lamar Valley, WY", coords: [44.8631, -110.2372] },
+            { name: "Grand Prismatic, WY", coords: [44.5250, -110.8382] },
+            { name: "Jackson Lake, WY", coords: [43.8769, -110.6406] },
+            { name: "Jenny Lake, WY", coords: [43.7513, -110.7229] },
+            { name: "Mormon Row, WY", coords: [43.6599, -110.6631] },
+            { name: "Jackson Hole, WY", coords: [43.4799, -110.7624] }
+        ],
+        thumbnailUrl: "/images/roadtrips/trip-33.png",
+        mapUrl: "/images/roadtrips/trip-33.png",
+        year: "2024"
     }
 ];

@@ -1,0 +1,8 @@
+# Apache Configuration for gierad.com
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Ensure /coffee redirects to /coffee/
+    RewriteRule ^coffee$ /coffee/ [R=301,L]
+</IfModule>

@@ -1,0 +1,290 @@
+{
+    "Candy Hearts El Eden Colombia": {
+        "dose": 18,
+        "profile": "coferment",
+        "lockedYield": 36,
+        "lockedTime": 22,
+        "grind": "1F",
+        "roastDate": "2026-01-27",
+        "notes": "Strawberry Jam, Pink Bubblegum, Cake Icing, Mint, Chamomile",
+        "link": "https://www.blackwhiteroasters.com/products/r-rodrigo-sanchez-candy-hearts",
+        "pourover": {
+            "dose": "18",
+            "ratio": 16,
+            "bloom": 45,
+            "grind": "4.3",
+            "water": "288",
+            "temp": "197"
+        },
+        "ratioStraight": 0.9249999999999999,
+        "ratioOat": 0.94,
+        "milkVol": 170,
+        "temp": "91",
+        "weight": 0.34,
+        "doses": 19,
+        "frozen": true,
+        "chatHistory": [
+            {
+                "q": "I love this bean. The flavors are sweet and candylicious. What makes this bean taste the way it does?",
+                "a": "That \"candylicious\" profile comes from two distinct factors: the **processing method** and how you are currently **extracting** it.\n\n**1. The Process (Co-ferment)**\nThis is a co-fermented coffee. During fermentation, the producer (Rodrigo Sanchez) likely introduced specific fruits, juices, or yeasts to the tank. This infuses the green bean with intense, specific aromatics like \"Strawberry Jam\" and \"Pink Bubblegum\" that standard washing/drying cannot achieve.\n\n**2. The Extraction (High Solubility)**\nYour current parameters are critical to this flavor profile:\n*   **Time (22s):** This is a fast shot, which is perfect here. Co-ferments are highly soluble and degrade quickly under pressure.\n*   **Temp (91\u00b0C):** A moderate temperature avoids \"cooking\" the delicate fruit esters.\n\nIf you were to slow this shot down to a traditional 30 seconds, those \"Cake Icing\" notes would likely turn medicinal or boozy (like cough syrup). The fast extraction captures the acids and sugars while stopping before the funky, chemical flavors wash out.",
+                "ts": 1770499348956
+            },
+            {
+                "q": "What temperature should I use for pour over?",
+                "a": "**Analysis:**\nThis co-fermented bean is structurally softer and more porous than a standard washed coffee due to the intense processing method. High temperatures increase kinetic energy, extracting compounds rapidly. With highly soluble beans like this \"Candy Hearts\" lot, using water right off the boil (100\u00b0C/212\u00b0F) poses a high risk of degrading those volatile \"Strawberry Jam\" and \"Mint\" esters into something harsh, rubbery, or medicinally boozy. The goal here is the gentle dissolution of sugars, not the aggressive breakdown of cell structure required for denser beans.\n\n**Recommendation:**\nTarget a temperature range between **90\u00b0C and 93\u00b0C (194\u00b0F - 199\u00b0F)**. Start specifically at **92\u00b0C (198\u00b0F)**. This mirrors the logic of the current 91\u00b0C espresso setting but accounts for the slower extraction dynamics of gravity brewing. If the \"Chamomile\" note tastes overly grassy or sour, bump up to 94\u00b0C. If the cup tastes like aspirin or burnt plastic, drop the temperature down to 88\u00b0C.",
+                "ts": 1770500973848
+            },
+            {
+                "q": "How should I prep this for filter / pour over?",
+                "a": "**Analysis:** The subject is a co-fermented process coffee with high solubility. The provided dataset lists a target Dose of 19g and Total Water of 288g. While the data notes a \"ratio\" of 16, the actual calculation ($288 \\div 19$) results in an effective ratio of **1:15.2**. This tighter ratio is advantageous for this profile; it increases total dissolved solids (TDS) to support the \"Strawberry Jam\" and \"Cake Icing\" notes, preventing the cup from becoming overly thin or tea-like. The target temperature of 199\u00b0F (93\u00b0C) is optimal for preserving volatile aromatics without extracting heavier, medicinal compounds.\n\n**Action:** Execute the following parameters based on the `pourover` data object:\n\n*   **Grind:** 4.4 (Medium-Coarse to prevent stalling).\n*   **Dose:** 19g.\n*   **Water:** 288g (Total).\n*   **Temperature:** 199\u00b0F (93\u00b0C).\n*   **Bloom:** 45g water for 45 seconds to off-gas CO2.\n*   **Pour Structure:** Pour remaining 243g in a steady, circular stream. Target total brew time between 2:30 and 2:45.",
+                "ts": 1770920762894
+            }
+        ],
+        "espresso": {
+            "dose": "18.5",
+            "yield": "36",
+            "time": "22",
+            "grind": "0.45",
+            "temp": "95"
+        },
+        "name": "Candy Hearts El Eden Colombia",
+        "oat": {
+            "milk": "140",
+            "yield": "34"
+        },
+        "archived": true
+    },
+    "Indonesia Orange Bourbon Kolah": {
+        "dose": 18,
+        "profile": "anaerobic",
+        "lockedYield": 36,
+        "lockedTime": 22,
+        "grind": "0.4",
+        "roastDate": "2025-12-18",
+        "notes": "Pineapple Juice, Magnolia, Honeydew, Bubblegum, Graham Cracker",
+        "link": "https://arkibkopi.my/products/indonesia-damarkandang-ob-kolah-2",
+        "pourover": {
+            "dose": 20,
+            "ratio": 16,
+            "bloom": 45,
+            "grind": "0"
+        },
+        "ratioStraight": 0.9166666666666665,
+        "ratioOat": 0.82,
+        "milkVol": 170,
+        "temp": "93",
+        "weight": 0.25,
+        "doses": 14,
+        "frozen": true,
+        "chatHistory": [
+            {
+                "q": "This bean was incredible!",
+                "a": "**Analysis:** Calculated Flow Rate is 1.64 g/s (36g / 22s). The rapid extraction time of 22 seconds at 93\u00b0C successfully maximized the solubility of the anaerobic profile's volatile compounds (Pineapple Juice, Bubblegum) while preventing the over-extraction of fermenty defects. The high flow rate suggests the grind setting of 0.4 is optimal for clarity on this density.\n\n**Action:** Maintain current parameters. No adjustments required. Lock in Grind 0.4 and Temp 93\u00b0C for remaining frozen doses.",
+                "ts": 1770511587741
+            }
+        ],
+        "espresso": {
+            "dose": 18,
+            "yield": "34",
+            "time": "25",
+            "grind": "0.4",
+            "temp": "91"
+        },
+        "oat": {
+            "milk": "140",
+            "yield": "33"
+        },
+        "name": "Indonesia Orange Bourbon Kolah",
+        "archived": true
+    },
+    "Ethiopia Abdo Abamacha Nefertari": {
+        "dose": 18,
+        "profile": "washed",
+        "lockedYield": 36,
+        "lockedTime": 28,
+        "grind": "--",
+        "roastDate": "2025-12-18",
+        "notes": "Strawberry, Red Berries, Lemongrass, Vanilla, Watermelon",
+        "link": "https://arkibkopi.my/products/ethiopia-biftu-gudina-lot-gamabuta",
+        "pourover": {
+            "dose": 20,
+            "ratio": 16,
+            "bloom": 45,
+            "grind": "0"
+        },
+        "ratioStraight": 1,
+        "ratioOat": 0.7,
+        "milkVol": 170,
+        "temp": 95,
+        "weight": 0.25,
+        "doses": 14,
+        "frozen": true,
+        "espresso": {
+            "dose": "18.5",
+            "yield": 36,
+            "time": 28,
+            "grind": "0.45",
+            "temp": 93
+        },
+        "name": "Ethiopia Abdo Abamacha Nefertari",
+        "archived": true
+    },
+    "Ethiopia Biftu Gudina Gamabuta": {
+        "dose": 18,
+        "profile": "washed",
+        "lockedYield": 36,
+        "lockedTime": 28,
+        "grind": "1D",
+        "roastDate": "2025-11-27",
+        "notes": "Rose Water, Lime Candy, Red Peach, Cantaloupe",
+        "link": "https://arkibkopi.my/products/ethiopia-biftu-gudina-lot-gamabuta",
+        "pourover": {
+            "dose": 20,
+            "ratio": 16,
+            "bloom": 45,
+            "grind": "0"
+        },
+        "ratioStraight": 0.9999999999999999,
+        "ratioOat": 0.8944444444444444,
+        "milkVol": 170,
+        "temp": "94",
+        "weight": 0.18,
+        "doses": 10,
+        "frozen": true,
+        "archived": true
+    },
+    "Tanzania Gaia Estate Anaerobic": {
+        "dose": 19,
+        "profile": "anaerobic",
+        "lockedYield": 38,
+        "lockedTime": 22,
+        "grind": "1E",
+        "roastDate": "2026-04-02",
+        "notes": "Orange Zest, Cola, Cloves",
+        "link": "",
+        "pourover": {
+            "dose": 18,
+            "ratio": 16,
+            "bloom": 45,
+            "grind": "4.5"
+        },
+        "ratioStraight": 0.9026315789473683,
+        "ratioOat": 0.82,
+        "milkVol": 150,
+        "temp": "91.5",
+        "archived": true,
+        "weight": "0.68",
+        "doses": 19,
+        "frozen": true,
+        "name": "Tanzania Gaia Estate Anaerobic",
+        "chatHistory": [
+            {
+                "q": "Amazing at pour over. Incredibly smooth",
+                "a": "**Analysis:** Pour-over configuration verified as optimal based on qualitative feedback. Espresso telemetry indicates a Flow Rate of approximately 1.73 g/s (38g yield / 22s). This is a high-velocity extraction for a 1:2 ratio. While the anaerobic processing aids solubility, the current 22-second contact time is likely insufficient to fully develop the \"Cola\" and \"Clove\" sweetness, potentially skewing the profile toward sharp acidity rather than the \"smoothness\" observed in the filter brew.\n\n**Action:** Maintain pour-over variables. For espresso, adjust grind setting finer from current 1E. Target a Flow Rate deceleration to ~1.35 g/s (aiming for ~28 seconds) to increase body and integrate acidity.",
+                "ts": 1770666293122
+            }
+        ]
+    },
+    "Indonesia Semendo Popilos Gaya ": {
+        "name": "Indonesia Semendo Popilos Gaya ",
+        "link": "https://arkibkopi.my/products/indonesia-semendo-yogi-gaya?srsltid=AfmBOorHM6Zd0785E9il549GMYU6-f8ApX5-D0s8-C5Ewq0Ay4MLyNZd",
+        "weight": "1",
+        "roastDate": "2026-02-09",
+        "profile": "anaerobic",
+        "frozen": true,
+        "espresso": {
+            "dose": "18",
+            "yield": "34",
+            "time": 28,
+            "grind": "0.25",
+            "temp": "91"
+        },
+        "doses": 4
+    },
+    "Colombia El Paraiso Red Plum": {
+        "name": "Colombia El Paraiso Red Plum",
+        "weight": "1",
+        "roastDate": "2026-02-10",
+        "profile": "anaerobic",
+        "doses": 8,
+        "espresso": {
+            "dose": "18",
+            "yield": "34",
+            "time": 28,
+            "grind": "0.35",
+            "temp": 93
+        },
+        "link": "https://www.redroostercoffee.com/products/colombia-el-paraiso-red-plum",
+        "notes": "Red Plum, Grape Sugus, Gooseberry, Fruits Jelly, Dark Chocolate",
+        "frozen": true
+    },
+    "Tanzania Gaia Estate": {
+        "name": "Tanzania Gaia Estate",
+        "weight": "0.67",
+        "roastDate": "2026-04-02",
+        "profile": "anaerobic",
+        "doses": 31,
+        "espresso": {
+            "dose": "18",
+            "yield": 36,
+            "time": 28,
+            "grind": "0.45",
+            "temp": 93
+        },
+        "link": "",
+        "notes": "Orange Zest, Cola, Cloves",
+        "frozen": true
+    },
+    "Peru Geisha Felipe": {
+        "name": "Peru Geisha Felipe",
+        "weight": "1",
+        "roastDate": "2026-02-09",
+        "link": "https://arkibkopi.my/products/peru-felipe-okasha-geisha?_pos=1&_psq=geisha&_ss=e&_v=1.0",
+        "profile": "natural",
+        "notes": "Meyer Lemon, White Grape, Jammy Orange, Robse Buds, Biscoff",
+        "frozen": true,
+        "doses": 27,
+        "espresso": {
+            "dose": "18",
+            "yield": 36,
+            "time": 28,
+            "grind": "0.30",
+            "temp": 93
+        },
+        "chatHistory": [
+            {
+                "q": "Hey, this tastes really good! Did I nail the temperature correctly?",
+                "a": "**Analysis:** Grind size set at 0.30 and a brewing temperature of 93\u00b0C resulted in a Flow Rate of 1.29 g/s (36g yield / 28s time). A temperature of 93\u00b0C is highly effective for a Natural process Geisha, as it provides sufficient thermal energy to fully extract volatile fruit and floral compounds (Meyer Lemon, Rose Buds) without extracting bitter, astringent tannins. The optimal sensory feedback confirms that the thermal baseline and flow rate have achieved extraction equilibrium. \n\n**Action:** Maintain current parameters. Lock temperature at 93\u00b0C and grind size at 0.30 for the remaining frozen doses. No adjustment required.",
+                "ts": 1776195722413
+            }
+        ]
+    },
+    "Blue Ridge Decaf": {
+        "name": "Blue Ridge Decaf",
+        "weight": "0.34",
+        "roastDate": "2026-04-28",
+        "notes": "Caramel, Citrus, Chocolate",
+        "espresso": {
+            "dose": "18",
+            "yield": "33",
+            "time": 28,
+            "grind": "0.35",
+            "temp": "91"
+        },
+        "doses": 18
+    },
+    "Cucuk Langit": {
+        "name": "Cucuk Langit",
+        "profile": "anaerobic",
+        "weight": "1",
+        "roastDate": "2026-07-07",
+        "espresso": {
+            "dose": 18,
+            "yield": "34",
+            "time": 28,
+            "grind": "3.5",
+            "temp": 93
+        },
+        "doses": 2
+    }
+}

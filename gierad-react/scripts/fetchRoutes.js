@@ -27,10 +27,31 @@ async function fetchRoute(trip) {
 }
 
 async function main() {
-    const cachedRoutes = {};
+    const outputDir = path.join(__dirname, '../src/data');
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+    }
+    const outputPath = path.join(outputDir, 'cachedRoutes.json');
+
+    let cachedRoutes = {};
+    if (fs.existsSync(outputPath)) {
+        try {
+            cachedRoutes = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+        } catch (e) {
+            console.warn('Could not parse existing cachedRoutes.json, creating new.');
+        }
+    }
+
+    const forceRefetch = process.env.FORCE_REFETCH === 'true' || process.env.FORCE_REFETCH === '1';
 
     for (let i = 0; i < roadTripsData.length; i++) {
         const trip = roadTripsData[i];
+
+        if (!forceRefetch && cachedRoutes[i] && Array.isArray(cachedRoutes[i]) && cachedRoutes[i].length > 0) {
+            console.log(`[${i}] Already cached: ${trip.title} (${cachedRoutes[i].length} points)`);
+            continue;
+        }
+
         let route = null;
         let retries = 3;
         
@@ -56,6 +77,9 @@ async function main() {
         cachedRoutes[i] = route;
         console.log(`Successfully mapped ${trip.title} with ${route.length} points.`);
 
+        // Save progress after each fetch
+        fs.writeFileSync(outputPath, JSON.stringify(cachedRoutes));
+
         // Delay to firmly respect OSRM's 1-request-per-second public API limit
         if (i < roadTripsData.length - 1) {
             const delay = 2500;
@@ -64,11 +88,6 @@ async function main() {
         }
     }
 
-    const outputDir = path.join(__dirname, '../src/data');
-    if (!fs.existsSync(outputDir)) {
-        fs.mkdirSync(outputDir, { recursive: true });
-    }
-    const outputPath = path.join(outputDir, 'cachedRoutes.json');
     fs.writeFileSync(outputPath, JSON.stringify(cachedRoutes));
     console.log(`\nSuccess! Wrote complete route cache to ${outputPath}`);
 }

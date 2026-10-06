@@ -20,21 +20,29 @@ async function main() {
         fs.mkdirSync(outputDir, { recursive: true });
     }
 
+    const forceRecapture = process.env.FORCE_RECAPTURE === 'true' || process.env.FORCE_RECAPTURE === '1';
+    const port = process.env.PORT || '5174';
+
     for (let i = 0; i < roadTripsData.length; i++) {
         const trip = roadTripsData[i];
+        const filename = `trip-${i}.png`;
+        const filepath = path.join(outputDir, filename);
+
+        if (!forceRecapture && fs.existsSync(filepath)) {
+            console.log(`[${i}] Skipping already captured thumbnail: ${filename}`);
+            continue;
+        }
+
         console.log(`Processing trip [${i}]: ${trip.title}`);
         
         try {
-            await page.goto(`http://127.0.0.1:5174/?snapshot=${i}`, { waitUntil: 'networkidle0' });
+            await page.goto(`http://127.0.0.1:${port}/?snapshot=${i}`, { waitUntil: 'networkidle0' });
             
             // Wait for our custom ready hook from SnapshotView
             await page.waitForSelector('#snapshot-ready', { timeout: 10000 });
             
             // Wait an extra 800ms precisely to guarantee WebGL tile layering artifacts map properly
             await new Promise(r => setTimeout(r, 800));
-            
-            const filename = `trip-${i}.png`;
-            const filepath = path.join(outputDir, filename);
             
             await page.screenshot({ path: filepath });
             console.log(`Successfully saved screenshot: ${filename}`);
