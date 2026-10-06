@@ -3,6 +3,10 @@
     RewriteEngine On
     RewriteBase /
 
-    # Ensure /coffee redirects to /coffee/
-    RewriteRule ^coffee$ /coffee/ [R=301,L]
+    # Ensure /coffee redirects to /coffee/ (using 308 to preserve POST methods)
+    RewriteRule ^coffee$ /coffee/ [R=308,L]
+
+    # Enforce www.gierad.com with 308 Permanent Redirect so POST payloads are never dropped
+    RewriteCond %{HTTP_HOST} ^gierad\.com$ [NC]
+    RewriteRule ^(.*)$ https://www.gierad.com/$1 [R=308,L]
 </IfModule>
