@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import type { BeanData } from './data/initialBeans';
 import { INITIAL_BEANS } from './data/initialBeans';
-import { fetchBeans, saveAllBeansApi, upsertBeanApi, sendChatMessage } from './api';
+import { fetchBeans, saveAllBeansApi, upsertBeanApi, deleteBeanApi, sendChatMessage } from './api';
 import './coffee.css';
 
 const PROCESS_PROFILES: Record<string, { label: string; className: string }> = {
@@ -26,6 +26,7 @@ export default function CoffeeApp() {
   const [isEditorOpen, setIsEditorOpen] = useState(false);
   const [activeConfig, setActiveConfig] = useState<'espresso' | 'oat' | 'pourover' | null>(null);
   const [formData, setFormData] = useState<any>({});
+  const [editingOriginalId, setEditingOriginalId] = useState<string | null>(null);
   const [showArchived, setShowArchived] = useState(false);
   
   // Interrogation / AI chat
@@ -71,6 +72,52 @@ export default function CoffeeApp() {
     });
 
     await upsertBeanApi(name, data);
+  };
+
+  const handleDeleteBean = async (beanNameToDelete: string) => {
+    if (!beanNameToDelete) return;
+    if (!window.confirm(`Are you sure you want to permanently delete "${beanNameToDelete}"?`)) {
+      return;
+    }
+    await deleteBeanApi(beanNameToDelete);
+    setBeans(prev => {
+      const copy = { ...prev };
+      delete copy[beanNameToDelete];
+      return copy;
+    });
+    if (activeId === beanNameToDelete) {
+      const remaining = Object.keys(beans).filter(k => k !== beanNameToDelete);
+      setActiveId(remaining.length > 0 ? remaining[0] : null);
+    }
+    if (isEditorOpen) {
+      setIsEditorOpen(false);
+      setEditingOriginalId(null);
+    }
+  };
+
+  const handleSaveIdentity = async () => {
+    const cleanName = (formData.name || '').trim();
+    if (!cleanName) {
+      alert("Please enter a bean name.");
+      return;
+    }
+
+    const payload = { ...formData, name: cleanName };
+
+    // If editing an existing bean and the user renamed it, delete the old bean key first
+    if (editingOriginalId && editingOriginalId !== cleanName) {
+      await deleteBeanApi(editingOriginalId);
+      setBeans(prev => {
+        const copy = { ...prev };
+        delete copy[editingOriginalId];
+        return copy;
+      });
+    }
+
+    await saveBean(cleanName, payload);
+    setActiveId(cleanName);
+    setEditingOriginalId(null);
+    setIsEditorOpen(false);
   };
 
   const handleInterrogate = async (isInventory = false) => {
@@ -251,7 +298,11 @@ export default function CoffeeApp() {
                         </a>
                       )}
                       <button 
-                        onClick={() => { setFormData({ ...activeBean, name: activeId }); setIsEditorOpen(true); }} 
+                        onClick={() => { 
+                          setFormData({ ...activeBean, name: activeId }); 
+                          setEditingOriginalId(activeId);
+                          setIsEditorOpen(true); 
+                        }} 
                         className="coffee-btn-ghost"
                       >
                         ⚙️ ID
@@ -505,7 +556,11 @@ export default function CoffeeApp() {
             <div className="coffee-inv-toolbar">
               <div className="coffee-toolbar-group">
                 <button 
-                  onClick={() => { setFormData({}); setIsEditorOpen(true); }} 
+                  onClick={() => { 
+                    setFormData({}); 
+                    setEditingOriginalId(null);
+                    setIsEditorOpen(true); 
+                  }} 
                   className="coffee-btn-primary"
                 >
                   <Plus size={14} /> ADD BEAN
@@ -587,12 +642,23 @@ export default function CoffeeApp() {
                         <span style={{ textTransform: 'capitalize' }}>{b.profile || 'Washed'}</span>
                       </div>
                     </div>
-                    <div>
+                    <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
                       <button 
-                        onClick={() => { setFormData({ ...b, name: id }); setIsEditorOpen(true); }} 
+                        onClick={() => { 
+                          setFormData({ ...b, name: id }); 
+                          setEditingOriginalId(id);
+                          setIsEditorOpen(true); 
+                        }} 
                         className="coffee-btn-secondary"
                       >
                         ⚙️ EDIT
+                      </button>
+                      <button 
+                        onClick={() => handleDeleteBean(id)} 
+                        className="coffee-btn-icon-danger"
+                        title={`Delete ${id}`}
+                      >
+                        <Trash2 size={13} />
                       </button>
                     </div>
                   </div>
@@ -759,21 +825,32 @@ export default function CoffeeApp() {
                 </div>
               </div>
 
-              <div className="coffee-modal-footer">
-                <button onClick={() => setIsEditorOpen(false)} className="coffee-btn-cancel">
-                  CANCEL
-                </button>
-                <button 
-                  onClick={() => { 
-                    if (!formData.name) return;
-                    saveBean(formData.name, formData); 
-                    setActiveId(formData.name); 
-                    setIsEditorOpen(false); 
-                  }} 
-                  className="coffee-btn-save"
-                >
-                  SAVE BEAN
-                </button>
+              <div className="coffee-modal-footer" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  {editingOriginalId && (
+                    <button 
+                      type="button" 
+                      onClick={() => handleDeleteBean(editingOriginalId)} 
+                      className="coffee-btn-danger"
+                    >
+                      <Trash2 size={14} /> DELETE BEAN
+                    </button>
+                  )}
+                </div>
+                <div style={{ display: 'flex', gap: '0.6rem' }}>
+                  <button 
+                    onClick={() => { setIsEditorOpen(false); setEditingOriginalId(null); }} 
+                    className="coffee-btn-cancel"
+                  >
+                    CANCEL
+                  </button>
+                  <button 
+                    onClick={handleSaveIdentity} 
+                    className="coffee-btn-save"
+                  >
+                    SAVE BEAN
+                  </button>
+                </div>
               </div>
             </div>
           </div>
